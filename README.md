@@ -1,14 +1,14 @@
-# Evaluación de la eficiencia técnica y predicción de riesgos en el Plan de Desarrollo Distrital de Bogotá 2024–2028
+# Evaluación de la eficiencia técnica y predicción de riesgos en el Plan de Desarrollo Distrital de Bogotá 2024–2027 «Bogotá Camina Segura»
 
 > Anteproyecto de investigación — Facultad de Estadística, Universidad Santo Tomás, seccional Bogotá.
 
 ## Resumen
 
-Este proyecto propone evaluar la eficiencia técnica y anticipar riesgos de ineficiencia en la ejecución de las metas-producto del Plan de Desarrollo Distrital (PDD) de Bogotá 2024–2028. La propuesta integra el Análisis Envolvente de Datos (DEA), técnicas de Procesamiento de Lenguaje Natural (NLP) y modelos de clasificación de aprendizaje automático para relacionar recursos financieros, avances físicos y hallazgos de los informes institucionales.
+Este proyecto propone evaluar la eficiencia técnica y anticipar riesgos de ineficiencia en la ejecución de las metas-producto del Plan de Desarrollo Distrital (PDD) de Bogotá 2024–2027. La propuesta integra el Análisis Envolvente de Datos (DEA), técnicas de Procesamiento de Lenguaje Natural (NLP) y modelos de clasificación de aprendizaje automático para relacionar recursos financieros, avances físicos y hallazgos de los informes institucionales.
 
 El propósito es complementar el seguimiento basado principalmente en porcentajes de ejecución financiera con una lectura conjunta de resultados físicos y barreras operativas. El estudio se plantea como una investigación aplicada, no experimental, retrospectiva, longitudinal y analítico-predictiva. La información de seguimiento disponible hasta 2026 servirá como corte para el análisis y el desarrollo del prototipo.
 
-**Estado del proyecto:** anteproyecto y diseño metodológico. Los documentos disponibles describen la propuesta; no reportan resultados empíricos de la aplicación del DEA ni métricas de desempeño de modelos predictivos ya entrenados.
+**Estado del proyecto:** anteproyecto entregado (octubre de 2026) y primera fase técnica implementada (pipeline de adquisición y limpieza Bronce → Silver con el corte del 30 de junio de 2026). Las fases de DEA, NLP y clasificación aún no se han ejecutado, por lo que no se reportan puntajes de eficiencia ni métricas de modelos.
 
 ## Problema de investigación
 
@@ -24,7 +24,7 @@ La propuesta busca integrar estas fuentes para medir eficiencia relativa y explo
 
 ### Objetivo general
 
-Evaluar la eficiencia técnica y predecir los riesgos de ineficiencia en la ejecución de las metas-producto del Plan de Desarrollo Distrital de Bogotá 2024–2028 mediante la integración de DEA, NLP e indicadores de gestión.
+Evaluar la eficiencia técnica y predecir los riesgos de ineficiencia en la ejecución de las metas-producto del Plan de Desarrollo Distrital de Bogotá 2024–2027 mediante la integración de DEA, NLP e indicadores de gestión.
 
 ### Objetivos específicos
 
@@ -34,7 +34,7 @@ Evaluar la eficiencia técnica y predecir los riesgos de ineficiencia en la ejec
 
 ## Alcance y datos
 
-- **Ámbito:** Plan de Desarrollo Distrital de Bogotá 2024–2028.
+- **Ámbito:** Plan de Desarrollo Distrital de Bogotá 2024–2027.
 - **Población de referencia:** 425 metas-producto del PDD, según el documento metodológico.
 - **Unidad de análisis:** metas-producto; para DEA se analizarán grupos comparables dentro de sectores homólogos, sujetos a disponibilidad y calidad de datos.
 - **Fuentes previstas:** bases oficiales de seguimiento del PDD y SEGPLAN, datos de avance físico y financiero e informes institucionales narrativos en PDF o Excel.
@@ -71,6 +71,22 @@ Primera fase técnica del proyecto, con arquitectura por capas (Bronce → Silve
 | `02_limpieza_avance_plan.ipynb` | Prepara las tablas de Avance del Plan |
 | `03_limpieza_gestion_inversion.ipynb` | Prepara la base y los diccionarios de Gestión-Inversión |
 | `04_extraccion_narrativas_gestion_inversion.ipynb` | Extrae del PDF oficial los relatos de retrasos, soluciones y logros |
+
+**Primer corte procesado (30 de junio de 2026)**
+
+| Tabla Silver | Filas | Granularidad |
+|---|---|---|
+| `avance_plan.csv` | 1 | Plan completo |
+| `avance_objetivo_estrategico.csv` | 5 | Objetivo estratégico |
+| `avance_programa.csv` | 39 | Programa |
+| `avance_meta_producto.csv` | 425 | Meta-producto |
+| `avance_indicadores.csv` | 443 | Indicador de meta |
+| `gestion_inversion.csv` | 1.655 | Actividad de proyecto (48 entidades, 16 sectores, 425 metas) |
+| `gestion_inversion_narrativas.csv` | 425 | Relatos de retrasos/soluciones y avances/logros por meta |
+
+Al corte, el plan reporta un avance físico de **71,1 %** frente a lo programado hasta la vigencia 2026 (`AVANCE_TRANSCURRIDO`) y de **53,3 %** frente a la meta total del cuatrienio (`AVANCE_PLAN`). Por meta-producto, la mediana de `AVANCE_PLAN` es 58,5 % y 17 metas registran avance cero. Explicar por qué unas metas avanzan y otras se rezagan con recursos similares es lo que el proyecto aborda con DEA y NLP.
+
+> Nota técnica: las tablas usan `|` como separador, excepto `gestion_inversion_narrativas.csv`, que usa `;`. Todas están en UTF-8 con BOM (`encoding="utf-8-sig"` en pandas).
 
 `pipeline/Capa Silver/2026-06-30/` contiene los resultados limpios del corte del 30 de junio de 2026. La `Capa Bronce` no se versiona: se regenera ejecutando el notebook 01. Instrucciones de ejecución en `pipeline/README.md`.
 
