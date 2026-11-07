@@ -1,0 +1,6 @@
+# Originales oficiales: se descargan con 01_descarga_ultimo_corte.ipynb
+Capa Bronce/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.xlsx
