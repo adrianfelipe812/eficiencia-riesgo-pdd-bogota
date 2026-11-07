@@ -124,6 +124,6 @@ Facultad de Estadística — Universidad Santo Tomás, seccional Bogotá.
 - Los informes narrativos pueden variar en formato y detalle; su normalización y clasificación deben documentarse para hacer el análisis reproducible.
 - Las cifras y estados citados en la propuesta corresponden al corte señalado en los documentos y no deben interpretarse como datos actuales en tiempo real.
 
-## Licencia y uso de datos
+## Licencia
 
-No se especifica una licencia de software ni de datos en los documentos disponibles. Antes de publicar el repositorio, se recomienda definir la licencia y verificar las condiciones de uso, atribución y redistribución de cada fuente de datos institucional.
+El contenido de este repositorio (código, documentos y figuras propias) se publica bajo la licencia [Creative Commons Atribución 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.es): puede compartirse y adaptarse citando a los autores. Ver [`LICENSE`](LICENSE). Los datos de `pipeline/Capa Silver` provienen de publicaciones oficiales de la Secretaría Distrital de Planeación y conservan las condiciones de uso de su fuente.
