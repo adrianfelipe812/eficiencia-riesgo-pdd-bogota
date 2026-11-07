@@ -61,6 +61,19 @@ El documento metodológico también menciona la Frontera Estocástica (SFA) como
 - Elaboración de cronograma de actividades y estimación presupuestal para alojamiento de datos en una capa de consulta analítica durante seis meses, con inicio proyectado para febrero de 2027. Los costos son estimaciones sujetas a cambios.
 - Proyección de trabajo futuro: conexión con fuentes institucionales y SECOP II, análisis de documentos contractuales, seguimiento durante el cuatrienio y evaluación de replicabilidad en otros entes territoriales.
 
+## Pipeline de datos (`pipeline/`)
+
+Primera fase técnica del proyecto, con arquitectura por capas (Bronce → Silver):
+
+| Notebook | Etapa |
+|---|---|
+| `01_descarga_ultimo_corte.ipynb` | Descarga las fuentes oficiales de la Secretaría Distrital de Planeación a `Capa Bronce` |
+| `02_limpieza_avance_plan.ipynb` | Prepara las tablas de Avance del Plan |
+| `03_limpieza_gestion_inversion.ipynb` | Prepara la base y los diccionarios de Gestión-Inversión |
+| `04_extraccion_narrativas_gestion_inversion.ipynb` | Extrae del PDF oficial los relatos de retrasos, soluciones y logros |
+
+`pipeline/Capa Silver/2026-06-30/` contiene los resultados limpios del corte del 30 de junio de 2026. La `Capa Bronce` no se versiona: se regenera ejecutando el notebook 01. Instrucciones de ejecución en `pipeline/README.md`.
+
 ## Prototipo
 
 `prototipo/index.html` es un prototipo funcional (sin conexión, sin IA ni API) para focalizar el seguimiento de metas y actividades del PDD con datos reales de tres cortes de la auditoría publicados por la Secretaría Distrital de Planeación. Se abre directamente en el navegador. `prototipo/guia_completa.html` documenta la capa Gold propuesta.
@@ -70,6 +83,7 @@ El documento metodológico también menciona la Frontera Estocástica (SFA) como
 ## Estructura del repositorio
 
 ```text
+├── pipeline/                    # Notebooks Bronce → Silver, rutas.py y Capa Silver
 ├── docs/anteproyecto.pdf        # Anteproyecto final (oct. 2026)
 ├── latex/                       # Fuente LaTeX de la versión resumida (plantilla USTA)
 └── prototipo/
