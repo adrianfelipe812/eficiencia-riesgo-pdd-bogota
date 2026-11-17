@@ -1,5 +1,5 @@
 # Eficiencia técnica y riesgo de subejecución en el PDD "Bogotá Camina Segura"
-
+ 
 Trabajo de grado de la Maestría en Ciencia de Datos, Universidad Santo Tomás.
 Equipo: Jhonatan Smith Doncel, Jorge Emmanuel Marín, Adrian Felipe Grateron. Director: Carlos Isaac Zainea.
 
