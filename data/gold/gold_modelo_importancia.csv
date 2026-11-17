@@ -1,0 +1,51 @@
+﻿objetivo|variable|nombre|tipo|importancia|shap_medio_abs
+riesgo_lineal_siguiente|en_rezago_actual|Ya rezagada en este corte|Física|0,1156|0,3165
+riesgo_lineal_siguiente|avance_vigencia|Avance del año|Física|0,0571|0,3319
+riesgo_lineal_siguiente|eficiencia_dea|Eficiencia DEA|Eficiencia DEA|0,0544|0,3251
+riesgo_lineal_siguiente|pct_actividades_entrega_cero|Actividades sin entrega|Física|0,0414|0,1891
+riesgo_lineal_siguiente|avance_plan|Avance del cuatrienio|Física|0,0408|0,4508
+riesgo_lineal_siguiente|pct_compromisos|Dinero comprometido|Financiera|0,0287|0,3398
+riesgo_lineal_siguiente|n_actividades|Número de actividades|Física|0,0239|0,2057
+riesgo_lineal_siguiente|log_recursos_programados|Recursos programados|Financiera|0,0101|0,1281
+riesgo_lineal_siguiente|narra_problema|La entidad narra un problema|Texto|0,0083|0,1896
+riesgo_lineal_siguiente|barrera_factores_externos|Narra factores externos|Texto|0,008|0,1118
+riesgo_lineal_siguiente|n_entidades|Número de entidades|Física|0,0067|0,095
+riesgo_lineal_siguiente|menciona_dificultad_num|La entidad reconoce una dificultad|Texto|0,0065|0,0716
+riesgo_lineal_siguiente|barrera_tramites_y_permisos|Narra barrera de trámites y permisos|Texto|0,0053|0,0779
+riesgo_lineal_siguiente|pct_giros|Dinero girado|Financiera|0,0037|0,381
+riesgo_lineal_siguiente|es_suma|Anualización tipo Suma|Física|0,0021|0,2765
+riesgo_lineal_siguiente|es_constante|Anualización tipo Constante|Física|-0,0001|0,0784
+riesgo_lineal_siguiente|n_relatos_retraso|Relatos de retraso|Texto|-0,0001|0,0401
+riesgo_lineal_siguiente|barrera_talento_y_capacidad|Narra barrera de talento humano|Texto|-0,0002|0,0464
+riesgo_lineal_siguiente|barrera_demanda_y_poblacion|Narra barrera de demanda|Texto|-0,0003|0,0532
+riesgo_lineal_siguiente|holgura_insumo_pct|Holgura de recursos|Eficiencia DEA|-0,0013|0,2942
+riesgo_lineal_siguiente|es_creciente|Anualización tipo Creciente|Física|-0,0015|0,0661
+riesgo_lineal_siguiente|avance_transcurrido|Avance transcurrido|Física|-0,0019|0,0299
+riesgo_lineal_siguiente|trimestre|Época del año del corte|Financiera|-0,0034|0,4751
+riesgo_lineal_siguiente|barrera_contratacion|Narra barrera de contratación|Texto|-0,0075|0,0835
+riesgo_lineal_siguiente|brecha_fisico_financiera|Dinero por delante del avance|Física|-0,0092|0,1577
+riesgo_relativo_siguiente|avance_vigencia|Avance del año|Física|0,1991|0,514
+riesgo_relativo_siguiente|en_rezago_actual|Ya rezagada en este corte|Física|0,0854|0,37
+riesgo_relativo_siguiente|avance_plan|Avance del cuatrienio|Física|0,0136|0,1919
+riesgo_relativo_siguiente|holgura_insumo_pct|Holgura de recursos|Eficiencia DEA|0,0131|0,1092
+riesgo_relativo_siguiente|es_constante|Anualización tipo Constante|Física|0,0102|0,1295
+riesgo_relativo_siguiente|pct_giros|Dinero girado|Financiera|0,01|0,0757
+riesgo_relativo_siguiente|eficiencia_dea|Eficiencia DEA|Eficiencia DEA|0,0099|0,2214
+riesgo_relativo_siguiente|pct_actividades_entrega_cero|Actividades sin entrega|Física|0,0093|0,086
+riesgo_relativo_siguiente|brecha_fisico_financiera|Dinero por delante del avance|Física|0,0087|0,1348
+riesgo_relativo_siguiente|trimestre|Época del año del corte|Financiera|0,0086|0,669
+riesgo_relativo_siguiente|log_recursos_programados|Recursos programados|Financiera|0,0083|0,0823
+riesgo_relativo_siguiente|n_actividades|Número de actividades|Física|0,0066|0,2001
+riesgo_relativo_siguiente|n_entidades|Número de entidades|Física|0,0058|0,0306
+riesgo_relativo_siguiente|pct_compromisos|Dinero comprometido|Financiera|0,0053|0,0976
+riesgo_relativo_siguiente|avance_transcurrido|Avance transcurrido|Física|0,0044|0,0744
+riesgo_relativo_siguiente|es_suma|Anualización tipo Suma|Física|0,0013|0,0788
+riesgo_relativo_siguiente|narra_problema|La entidad narra un problema|Texto|0,0|0,0
+riesgo_relativo_siguiente|barrera_contratacion|Narra barrera de contratación|Texto|0,0|0,0
+riesgo_relativo_siguiente|barrera_tramites_y_permisos|Narra barrera de trámites y permisos|Texto|0,0|0,0
+riesgo_relativo_siguiente|barrera_talento_y_capacidad|Narra barrera de talento humano|Texto|0,0|0,0
+riesgo_relativo_siguiente|barrera_demanda_y_poblacion|Narra barrera de demanda|Texto|0,0|0,0
+riesgo_relativo_siguiente|barrera_factores_externos|Narra factores externos|Texto|0,0|0,0
+riesgo_relativo_siguiente|es_creciente|Anualización tipo Creciente|Física|-0,0001|0,0091
+riesgo_relativo_siguiente|n_relatos_retraso|Relatos de retraso|Texto|-0,0067|0,1338
+riesgo_relativo_siguiente|menciona_dificultad_num|La entidad reconoce una dificultad|Texto|-0,0104|0,0648

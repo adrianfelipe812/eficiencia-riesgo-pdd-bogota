@@ -1,0 +1,21 @@
+﻿conjunto|relatos_leidos|ponderado|medida|precision_pct|sensibilidad_pct|f1_pct
+desarrollo|90|No (conteo de la muestra)|¿El relato narra alguna barrera?|97,8|88,0|92,6
+desarrollo|90|No (conteo de la muestra)|¿Acertó la categoría de cada barrera?|85,2|83,9|84,6
+desarrollo|90|Sí (vale para todos los relatos)|¿El relato narra alguna barrera?|97,1|87,9|92,3
+desarrollo|90|Sí (vale para todos los relatos)|¿Acertó la categoría de cada barrera?|85,0|82,5|83,7
+desarrollo|90|No (conteo de la muestra)|Categoría: contratacion (19 casos reales)|86,4|100,0|92,7
+desarrollo|90|No (conteo de la muestra)|Categoría: coordinacion_recursos_y_tecnica (20 casos reales)|73,7|70,0|71,8
+desarrollo|90|No (conteo de la muestra)|Categoría: demanda_y_poblacion (7 casos reales)|100,0|100,0|100,0
+desarrollo|90|No (conteo de la muestra)|Categoría: factores_externos (2 casos reales)|100,0|50,0|66,7
+desarrollo|90|No (conteo de la muestra)|Categoría: talento_y_capacidad (4 casos reales)|100,0|100,0|100,0
+desarrollo|90|No (conteo de la muestra)|Categoría: tramites_y_permisos (10 casos reales)|87,5|70,0|77,8
+prueba|90|No (conteo de la muestra)|¿El relato narra alguna barrera?|94,2|96,1|95,1
+prueba|90|No (conteo de la muestra)|¿Acertó la categoría de cada barrera?|74,6|64,4|69,1
+prueba|90|Sí (vale para todos los relatos)|¿El relato narra alguna barrera?|94,5|91,7|93,0
+prueba|90|Sí (vale para todos los relatos)|¿Acertó la categoría de cada barrera?|74,6|66,0|70,0
+prueba|90|No (conteo de la muestra)|Categoría: contratacion (19 casos reales)|88,2|78,9|83,3
+prueba|90|No (conteo de la muestra)|Categoría: coordinacion_recursos_y_tecnica (19 casos reales)|43,8|36,8|40,0
+prueba|90|No (conteo de la muestra)|Categoría: demanda_y_poblacion (10 casos reales)|100,0|60,0|75,0
+prueba|90|No (conteo de la muestra)|Categoría: factores_externos (4 casos reales)|100,0|50,0|66,7
+prueba|90|No (conteo de la muestra)|Categoría: talento_y_capacidad (8 casos reales)|100,0|87,5|93,3
+prueba|90|No (conteo de la muestra)|Categoría: tramites_y_permisos (13 casos reales)|66,7|76,9|71,4

@@ -1,0 +1,36 @@
+[project]
+name = "eficiencia-riesgo-pdd-bogota"
+version = "0.1.0"
+description = "Eficiencia técnica (DEA), barreras narradas (NLP) y riesgo de subejecución en el PDD Bogotá Camina Segura"
+authors = [
+    {name = "Jhonatan Doncel - Emmanuel Marin - Adrian Grateron"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+# Mismas versiones que requirements.txt.
+dependencies = [
+    "pandas (==3.0.6)",
+    "numpy (==2.5.4)",
+    "scipy (==1.18.1)",
+    "scikit-learn (==1.9.1)",
+    "pyyaml (==6.0.3)",
+    "pymupdf (==2.1)",
+    "openpyxl (==3.1.5)",
+    "shap (==0.54.1)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (==9.2.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,130 @@
+﻿fecha_corte|grupo_dea|metas_en_grupo|metas_en_frontera|eficiencia_media|eficiencia_mediana|acuerdo_entre_versiones|grupo_estable
+31/12/2024|"Constante | Sector Hábitat"|12|7|0,8543|1,0|0,902|True
+31/12/2024|"Constante | Sector Integración social"|10|8|0,8887|1,0|1,0|True
+31/12/2024|"Constante | Sector Movilidad"|16|10|0,8504|1,0|1,0|True
+31/12/2024|"Constante | Sector Mujeres"|13|12|0,9231|1,0|1,0|True
+31/12/2024|"Constante | Sector Salud"|23|14|0,9077|1,0|1,0|True
+31/12/2024|"Constante | Sector Seguridad, Convivencia y Justicia"|10|8|0,949|1,0|1,0|True
+31/12/2024|"Creciente | Sector Gestión pública"|13|10|0,8385|1,0|1,0|True
+31/12/2024|"Creciente | Sector Integración social"|15|10|0,6707|1,0|1,0|True
+31/12/2024|"Suma | Sector Ambiente"|28|18|0,9455|1,0|1,0|True
+31/12/2024|"Suma | Sector Cultura, recreación y deporte"|30|27|0,9667|1,0|1,0|True
+31/12/2024|"Suma | Sector Desarrollo económico, industria y turismo"|30|14|0,7054|0,9194|1,0|True
+31/12/2024|"Suma | Sector Educación"|10|4|0,539|0,6948|1,0|True
+31/12/2024|"Suma | Sector Gobierno"|17|14|0,9281|1,0|0,894|True
+31/12/2024|"Suma | Sector Hábitat"|30|21|0,7446|1,0|1,0|True
+31/12/2024|"Suma | Sector Movilidad"|23|11|0,7236|0,9959|1,0|True
+31/12/2024|"Suma | Sector Planeación"|13|13|1,0|1,0||False
+31/03/2025|"Constante | Sector Cultura, recreación y deporte"|8|3|0,6206|0,7632||False
+31/03/2025|"Constante | Sector Hábitat"|12|6|0,6325|0,8677|1,0|True
+31/03/2025|"Constante | Sector Integración social"|10|3|0,6613|0,8332|0,954|True
+31/03/2025|"Constante | Sector Movilidad"|15|3|0,4452|0,25|0,93|True
+31/03/2025|"Constante | Sector Mujeres"|13|7|0,5987|1,0|0,935|True
+31/03/2025|"Constante | Sector Salud"|23|10|0,5819|0,998|1,0|True
+31/03/2025|"Constante | Sector Seguridad, Convivencia y Justicia"|10|3|0,4425|0,3175|0,987|True
+31/03/2025|"Creciente | Sector Gestión pública"|14|2|0,4594|0,4296|0,995|True
+31/03/2025|"Creciente | Sector Integración social"|14|4|0,6952|0,6969|0,933|True
+31/03/2025|"Suma | Sector Ambiente"|28|3|0,3621|0,3204|0,948|True
+31/03/2025|"Suma | Sector Cultura, recreación y deporte"|26|3|0,3594|0,3288|0,956|True
+31/03/2025|"Suma | Sector Desarrollo económico, industria y turismo"|29|3|0,2524|0,1237|0,981|True
+31/03/2025|"Suma | Sector Educación"|11|1|0,3177|0,0|0,975|True
+31/03/2025|"Suma | Sector Gobierno"|18|1|0,2072|0,0892|0,985|True
+31/03/2025|"Suma | Sector Hábitat"|29|1|0,1795|0,0415|0,997|True
+31/03/2025|"Suma | Sector Movilidad"|25|3|0,3793|0,2948|1,0|True
+31/03/2025|"Suma | Sector Planeación"|13|2|0,4806|0,3571|0,965|True
+30/06/2025|"Constante | Sector Hábitat"|12|6|0,7072|0,9901|0,971|True
+30/06/2025|"Constante | Sector Integración social"|10|4|0,7337|0,7961|0,945|True
+30/06/2025|"Constante | Sector Movilidad"|16|4|0,589|0,5|1,0|True
+30/06/2025|"Constante | Sector Mujeres"|13|7|0,6954|1,0|1,0|True
+30/06/2025|"Constante | Sector Salud"|23|10|0,6728|0,4165|1,0|True
+30/06/2025|"Constante | Sector Seguridad, Convivencia y Justicia"|10|3|0,7465|0,7924|1,0|True
+30/06/2025|"Creciente | Sector Gestión pública"|14|3|0,5872|0,7301|0,981|True
+30/06/2025|"Creciente | Sector Integración social"|14|3|0,772|0,7558|0,986|True
+30/06/2025|"Suma | Sector Ambiente"|29|4|0,533|0,5411|0,994|True
+30/06/2025|"Suma | Sector Cultura, recreación y deporte"|28|3|0,4456|0,3858|0,987|True
+30/06/2025|"Suma | Sector Desarrollo económico, industria y turismo"|30|4|0,4414|0,3495|0,987|True
+30/06/2025|"Suma | Sector Educación"|11|2|0,5417|0,5881|0,803|True
+30/06/2025|"Suma | Sector Gobierno"|18|2|0,5567|0,609|0,979|True
+30/06/2025|"Suma | Sector Hábitat"|29|4|0,3687|0,2198|0,998|True
+30/06/2025|"Suma | Sector Movilidad"|25|4|0,513|0,6313|0,989|True
+30/06/2025|"Suma | Sector Planeación"|13|3|0,768|0,7286|0,956|True
+30/09/2025|"Constante | Sector Hábitat"|12|6|0,7234|0,995|0,893|True
+30/09/2025|"Constante | Sector Integración social"|10|4|0,8227|0,9597|0,938|True
+30/09/2025|"Constante | Sector Movilidad"|17|4|0,6465|0,75|1,0|True
+30/09/2025|"Constante | Sector Mujeres"|13|7|0,8307|1,0|1,0|True
+30/09/2025|"Constante | Sector Salud"|23|10|0,7799|0,6664|1,0|True
+30/09/2025|"Constante | Sector Seguridad, Convivencia y Justicia"|10|4|0,8637|0,918|0,966|True
+30/09/2025|"Creciente | Sector Gestión pública"|14|3|0,6875|0,8527|0,971|True
+30/09/2025|"Creciente | Sector Integración social"|15|3|0,8417|0,8988|0,993|True
+30/09/2025|"Suma | Sector Ambiente"|29|3|0,7053|0,74|0,994|True
+30/09/2025|"Suma | Sector Cultura, recreación y deporte"|28|8|0,7311|0,7289|0,99|True
+30/09/2025|"Suma | Sector Desarrollo económico, industria y turismo"|31|3|0,5066|0,5395|0,998|True
+30/09/2025|"Suma | Sector Educación"|11|3|0,6447|0,8666|0,688|False
+30/09/2025|"Suma | Sector Gobierno"|18|3|0,6271|0,7071|0,992|True
+30/09/2025|"Suma | Sector Hábitat"|30|4|0,4329|0,444|0,999|True
+30/09/2025|"Suma | Sector Movilidad"|24|4|0,5645|0,7923|0,994|True
+30/09/2025|"Suma | Sector Planeación"|13|2|0,9145|0,9544|0,994|True
+31/12/2025|"Constante | Sector Hábitat"|12|8|0,8289|1,0|1,0|True
+31/12/2025|"Constante | Sector Integración social"|10|9|0,9947|1,0|1,0|True
+31/12/2025|"Constante | Sector Movilidad"|17|11|0,8318|1,0|1,0|True
+31/12/2025|"Constante | Sector Mujeres"|13|13|1,0|1,0||False
+31/12/2025|"Constante | Sector Salud"|23|11|0,9328|0,9997|1,0|True
+31/12/2025|"Constante | Sector Seguridad, Convivencia y Justicia"|10|9|0,9872|1,0|1,0|True
+31/12/2025|"Creciente | Sector Gestión pública"|15|12|0,9886|1,0|1,0|True
+31/12/2025|"Creciente | Sector Integración social"|15|13|0,9875|1,0|1,0|True
+31/12/2025|"Suma | Sector Ambiente"|29|17|0,9415|1,0|1,0|True
+31/12/2025|"Suma | Sector Cultura, recreación y deporte"|30|28|0,9897|1,0|1,0|True
+31/12/2025|"Suma | Sector Desarrollo económico, industria y turismo"|31|19|0,8478|1,0|1,0|True
+31/12/2025|"Suma | Sector Educación"|11|6|0,8322|1,0|1,0|True
+31/12/2025|"Suma | Sector Gobierno"|18|17|0,9711|1,0|1,0|True
+31/12/2025|"Suma | Sector Hábitat"|30|14|0,6411|0,7902|1,0|True
+31/12/2025|"Suma | Sector Movilidad"|25|16|0,7638|1,0|1,0|True
+31/12/2025|"Suma | Sector Planeación"|13|13|1,0|1,0||False
+31/03/2026|"Constante | Sector Hábitat"|12|4|0,4648|0,4179|0,927|True
+31/03/2026|"Constante | Sector Integración social"|10|3|0,5543|0,5307|0,933|True
+31/03/2026|"Constante | Sector Movilidad"|16|3|0,4207|0,25|0,924|True
+31/03/2026|"Constante | Sector Mujeres"|13|8|0,7085|1,0|1,0|True
+31/03/2026|"Constante | Sector Salud"|22|10|0,5347|0,2223|1,0|True
+31/03/2026|"Constante | Sector Seguridad, Convivencia y Justicia"|10|2|0,6172|0,7269|0,997|True
+31/03/2026|"Creciente | Sector Gestión pública"|15|2|0,59|0,7378|0,989|True
+31/03/2026|"Creciente | Sector Integración social"|15|3|0,6862|0,8256|0,913|True
+31/03/2026|"Suma | Sector Ambiente"|29|2|0,3502|0,3031|0,985|True
+31/03/2026|"Suma | Sector Cultura, recreación y deporte"|26|3|0,3771|0,3105|0,952|True
+31/03/2026|"Suma | Sector Desarrollo económico, industria y turismo"|30|4|0,3824|0,3493|0,996|True
+31/03/2026|"Suma | Sector Educación"|11|3|0,4551|0,2523|0,995|True
+31/03/2026|"Suma | Sector Gobierno"|17|4|0,4189|0,3265|0,858|True
+31/03/2026|"Suma | Sector Hábitat"|29|3|0,3183|0,25|0,997|True
+31/03/2026|"Suma | Sector Movilidad"|23|4|0,4531|0,402|0,993|True
+31/03/2026|"Suma | Sector Planeación"|13|3|0,6009|0,6104|0,954|True
+30/06/2026|"Constante | Sector Hábitat"|12|5|0,6407|0,7625|0,942|True
+30/06/2026|"Constante | Sector Integración social"|10|4|0,7254|0,8001|0,96|True
+30/06/2026|"Constante | Sector Movilidad"|16|3|0,5048|0,5|0,996|True
+30/06/2026|"Constante | Sector Mujeres"|13|6|0,6705|0,7302|1,0|True
+30/06/2026|"Constante | Sector Salud"|22|10|0,6373|0,4511|1,0|True
+30/06/2026|"Constante | Sector Seguridad, Convivencia y Justicia"|10|3|0,7142|0,7878|1,0|True
+30/06/2026|"Creciente | Sector Gestión pública"|15|4|0,6903|0,8469|0,843|True
+30/06/2026|"Creciente | Sector Integración social"|15|3|0,7714|0,9|0,997|True
+30/06/2026|"Suma | Sector Ambiente"|29|2|0,5896|0,5888|0,99|True
+30/06/2026|"Suma | Sector Cultura, recreación y deporte"|28|5|0,5198|0,4396|0,926|True
+30/06/2026|"Suma | Sector Desarrollo económico, industria y turismo"|29|2|0,5104|0,4791|0,983|True
+30/06/2026|"Suma | Sector Educación"|11|5|0,6216|0,9464|0,796|True
+30/06/2026|"Suma | Sector Gobierno"|18|5|0,5835|0,5064|0,658|False
+30/06/2026|"Suma | Sector Hábitat"|29|6|0,4698|0,4167|1,0|True
+30/06/2026|"Suma | Sector Movilidad"|23|2|0,5395|0,5971|0,999|True
+30/06/2026|"Suma | Sector Planeación"|13|2|0,7975|0,8519|0,972|True
+30/09/2026|"Constante | Sector Hábitat"|13|5|0,7743|0,8412|1,0|True
+30/09/2026|"Constante | Sector Integración social"|10|4|0,8137|0,9155|0,985|True
+30/09/2026|"Constante | Sector Movilidad"|16|5|0,71|0,7948|1,0|True
+30/09/2026|"Constante | Sector Mujeres"|13|7|0,836|1,0|1,0|True
+30/09/2026|"Constante | Sector Salud"|22|10|0,7823|0,8648|1,0|True
+30/09/2026|"Constante | Sector Seguridad, Convivencia y Justicia"|10|2|0,7982|0,8548|1,0|True
+30/09/2026|"Creciente | Sector Gestión pública"|15|3|0,7577|0,9105|0,986|True
+30/09/2026|"Creciente | Sector Integración social"|15|5|0,8775|0,925|1,0|True
+30/09/2026|"Suma | Sector Ambiente"|29|2|0,7512|0,7675|1,0|True
+30/09/2026|"Suma | Sector Cultura, recreación y deporte"|29|6|0,6702|0,7823|0,975|True
+30/09/2026|"Suma | Sector Desarrollo económico, industria y turismo"|28|3|0,6651|0,7123|0,935|True
+30/09/2026|"Suma | Sector Educación"|11|5|0,7581|0,9464|0,905|True
+30/09/2026|"Suma | Sector Gobierno"|18|3|0,8246|0,8|0,833|True
+30/09/2026|"Suma | Sector Hábitat"|30|6|0,6344|0,7229|1,0|True
+30/09/2026|"Suma | Sector Movilidad"|23|4|0,7025|0,8084|0,969|True
+30/09/2026|"Suma | Sector Planeación"|13|2|0,879|0,8993|0,994|True

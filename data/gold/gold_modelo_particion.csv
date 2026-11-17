@@ -1,0 +1,7 @@
+﻿objetivo|parte|cortes|filas|pct_en_riesgo|filas_con_relato
+riesgo_relativo_siguiente|entrenamiento|31/12/2024, 31/03/2025, 30/06/2025, 30/09/2025|1700|21,4|425
+riesgo_relativo_siguiente|validacion|31/12/2025|425|23,1|0
+riesgo_relativo_siguiente|prueba|31/03/2026, 30/06/2026|850|20,5|848
+riesgo_lineal_siguiente|entrenamiento|31/12/2024, 31/03/2025, 30/06/2025, 30/09/2025|1700|29,9|425
+riesgo_lineal_siguiente|validacion|31/12/2025|425|43,8|0
+riesgo_lineal_siguiente|prueba|31/03/2026, 30/06/2026|850|25,4|848

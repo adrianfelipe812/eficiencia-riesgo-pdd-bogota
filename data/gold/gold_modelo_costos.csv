@@ -1,0 +1,11 @@
+﻿objetivo|costo_omitir_frente_a_falsa_alarma|umbral|metas_senaladas|rezagos_detectados|rezagos_omitidos|falsas_alarmas|precision|sensibilidad|costo_total|es_la_configurada
+riesgo_relativo_siguiente|1|0,5|137|108|66|29|0,788|0,621|95,0|No
+riesgo_relativo_siguiente|2|0,3333|166|130|44|36|0,783|0,747|124,0|No
+riesgo_relativo_siguiente|3|0,25|172|133|41|39|0,773|0,764|162,0|No
+riesgo_relativo_siguiente|5|0,1667|189|139|35|50|0,735|0,799|225,0|Sí
+riesgo_relativo_siguiente|10|0,0909|258|146|28|112|0,566|0,839|392,0|No
+riesgo_lineal_siguiente|1|0,5|123|91|125|32|0,74|0,421|157,0|No
+riesgo_lineal_siguiente|2|0,3333|200|136|80|64|0,68|0,63|224,0|No
+riesgo_lineal_siguiente|3|0,25|295|164|52|131|0,556|0,759|287,0|No
+riesgo_lineal_siguiente|5|0,1667|433|190|26|243|0,439|0,88|373,0|Sí
+riesgo_lineal_siguiente|10|0,0909|647|211|5|436|0,326|0,977|486,0|No

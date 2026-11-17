@@ -1,0 +1,67 @@
+# Configuración de la fase analítica del PDD (narrativa + tablas Gold).
+# Todo lo que una persona del equipo podría querer cambiar está aquí,
+# para no tener que tocar el código.
+#
+# Alcance: se usan TODOS los cortes trimestrales disponibles, para poder seguir
+# cada meta en el tiempo y anticipar lo que ocurre en el corte siguiente.
+
+plan:
+  codigo: "17"
+  nombre: "Bogotá Camina Segura"
+  # A qué año corresponde cada bloque VIG1..VIG4 de Gestión-Inversión.
+  vigencias: {1: 2024, 2: 2025, 3: 2026, 4: 2027}
+
+rutas:
+  # Las rutas relativas se entienden desde la raíz del repositorio, que ya trae los datos
+  # necesarios (ver data/FUENTES.csv). Para usar una descarga más reciente del scraper,
+  # NO edite este archivo: copie configs/pdd.local.ejemplo.yaml como
+  # configs/pdd.local.yaml y escriba ahí sus rutas.
+  # Tablas limpias que produce el scraper (capa Silver), con todos los cortes apilados.
+  silver: "data/silver"
+  # Carpetas donde se buscan los PDF "Reporte de gestión e inversión por Entidad".
+  # Se revisan con sus subcarpetas; el corte se lee de la portada de cada PDF.
+  pdf_narrativas:
+    - "data/raw"
+  # Salida (dentro de este repositorio).
+  gold: "data/gold"
+
+# Eficiencia técnica (objetivo específico 1).
+dea:
+  minimo_metas_por_grupo: 8   # grupos más pequeños no se evalúan: casi todas quedarían "eficientes"
+  tope_producto: 100          # el avance físico se cuenta hasta 100 % para que un sobrecumplimiento extremo no deforme la frontera
+  acuerdo_minimo: 0.7         # acuerdo mínimo (0 a 1) entre medir con compromisos y con giros para confiar en el grupo
+
+# Variable de riesgo (objetivo específico 3). Se calculan tres definiciones para que el
+# equipo compare; ninguna es una norma oficial.
+riesgo:
+  # Se compararon nueve variantes (scripts/comparar_definiciones_riesgo.py; resultado en
+  # data/gold/gold_comparacion_riesgo.csv). Esta es la que mejor anticipa el modelo y una
+  # de las que mejor coincide con la subejecución real al cierre del año.
+  cuantil_relativo: 0.20              # "rezagada" = está en el 20 % más bajo de su grupo en el corte
+  grupo_relativo: ["tipo_anualizacion_predominante"]   # con qué metas se compara cada meta
+  fraccion_minima_del_esperado: 0.70  # regla lineal: avance por debajo del 70 % de lo esperado según el mes
+  umbral_cierre: 90                   # al cierre del año, avance inferior a 90 %
+
+modelo:
+  objetivos: ["riesgo_relativo_siguiente", "riesgo_lineal_siguiente"]   # el primero es el principal
+  cortes_validacion: 1   # cortes usados para elegir el modelo
+  cortes_prueba: 2       # cortes más recientes, reservados para medir
+  semilla: 42
+
+  # Costos de error. Omitir una meta que sí se rezaga (pierde la ventana de corrección)
+  # se considera 5 veces más costoso que revisar una que al final no se rezagó (unas horas
+  # de análisis). La razón 5:1 es un SUPUESTO del equipo, no una cifra oficial: la tabla
+  # gold_modelo_costos muestra qué pasaría con razones de 1, 2, 3, 5 y 10.
+  costo_rezago_no_detectado: 5
+  costo_falsa_alarma: 1
+  # Cómo se fija el umbral a partir del cual se alerta:
+  #   "bayes"             C_FA / (C_FA + C_RND) = 1/6. Óptimo si las probabilidades están
+  #                       calibradas, y no depende de un solo corte de validación (recomendado).
+  #   "costo_validacion"  el que minimiza el costo observado en el corte de validación.
+  #   "f1"                el que maximiza F1 (trata ambos errores igual; solo como comparación).
+  regla_umbral: "bayes"
+  beta: 2                # F-beta reportado: con beta = 2 la sensibilidad pesa el doble que la precisión
+  # Calibración de probabilidades: se elige en validación la de menor error de Brier.
+  calibracion_candidatas: ["ninguna", "sigmoid", "isotonic"]
+
+  alerta_alta: 0.50      # probabilidad desde la cual la alerta es alta; la media empieza en el umbral de decisión

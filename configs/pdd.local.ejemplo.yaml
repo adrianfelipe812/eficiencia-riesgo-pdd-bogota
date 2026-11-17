@@ -1,0 +1,7 @@
+# Copie este archivo como pdd.local.yaml y cambie las rutas por las de su equipo.
+rutas:
+  # Carpeta "processed" del scraper (contiene avance_plan/ y gestion_inversion/).
+  silver: "C:/ruta/a/SDP_BCS_Pipeline_Optimizado/data/processed"
+  # Carpetas con los PDF "Reporte de gestión e inversión por Entidad".
+  pdf_narrativas:
+    - "C:/ruta/a/SDP_BCS_Pipeline_Optimizado/data/raw/gestion_inversion"

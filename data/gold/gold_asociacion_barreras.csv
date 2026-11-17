@@ -1,0 +1,15 @@
+﻿fecha_corte|caracteristica|metas_con|metas_sin|eficiencia_mediana_con|eficiencia_mediana_sin|diferencia|valor_p|diferencia_significativa
+31/12/2024|narra_problema|49|231|0,828|1,0|-0,172|0,0|Sí
+31/12/2024|menciona_dificultad|39|241|0,828|1,0|-0,172|0,0|Sí
+31/12/2024|barrera_contratacion|19|261|0,826|1,0|-0,174|0,0|Sí
+31/12/2024|barrera_tramites_y_permisos|9|271|0,897|1,0|-0,103|0,0028|Sí
+31/03/2026|narra_problema|48|242|0,158|0,379|-0,22|0,0003|Sí
+31/03/2026|menciona_dificultad|30|260|0,173|0,371|-0,199|0,0134|Sí
+31/03/2026|barrera_contratacion|21|269|0,15|0,364|-0,214|0,0249|Sí
+31/03/2026|barrera_tramites_y_permisos|17|273|0,084|0,371|-0,286|0,0041|Sí
+30/06/2026|narra_problema|60|215|0,416|0,667|-0,25|0,0001|Sí
+30/06/2026|menciona_dificultad|45|230|0,426|0,653|-0,226|0,0021|Sí
+30/06/2026|barrera_contratacion|22|253|0,32|0,633|-0,313|0,0031|Sí
+30/06/2026|barrera_tramites_y_permisos|26|249|0,398|0,64|-0,241|0,0099|Sí
+30/06/2026|barrera_talento_y_capacidad|10|265|0,557|0,603|-0,046|0,9837|No
+30/06/2026|barrera_demanda_y_poblacion|10|265|0,565|0,603|-0,038|0,7243|No

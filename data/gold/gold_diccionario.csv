@@ -1,0 +1,106 @@
+﻿tabla|columna|significado|unidad|origen
+gold_meta_corte|fecha_corte|Fecha del corte trimestral de seguimiento al que corresponde la fila.|fecha|Avance del Plan (SDP)
+gold_meta_corte|vigencia|Año al que pertenece el corte.|año|Calculado
+gold_meta_corte|objetivo_codigo|Código del objetivo estratégico del Plan.|código|Avance del Plan (SDP)
+gold_meta_corte|objetivo_nombre|Nombre del objetivo estratégico.|texto|Avance del Plan (SDP)
+gold_meta_corte|programa_codigo|Código del programa.|código|Avance del Plan (SDP)
+gold_meta_corte|programa_nombre|Nombre del programa.|texto|Avance del Plan (SDP)
+gold_meta_corte|meta_producto_codigo|Código de la meta producto. Junto con fecha_corte identifica la fila.|código|Avance del Plan (SDP)
+gold_meta_corte|meta_producto_nombre|Enunciado de la meta producto.|texto|Avance del Plan (SDP)
+gold_meta_corte|avance_vigencia|Avance físico oficial de la meta frente a lo programado para el año del corte.|% (puede superar 100)|Avance del Plan (SDP)
+gold_meta_corte|avance_transcurrido|Avance físico oficial desde el inicio del Plan hasta el año del corte.|%|Avance del Plan (SDP)
+gold_meta_corte|avance_plan|Avance físico oficial frente a todo el cuatrienio.|%|Avance del Plan (SDP)
+gold_meta_corte|n_actividades|Número de actividades de proyectos de inversión asociadas a la meta en ese corte.|conteo|Gestión-Inversión (SDP)
+gold_meta_corte|n_entidades|Número de entidades que aportan actividades a la meta.|conteo|Gestión-Inversión (SDP)
+gold_meta_corte|n_actividades_programadas|Actividades con magnitud física programada mayor que cero para el año.|conteo|Calculado
+gold_meta_corte|n_actividades_entrega_cero|Actividades con programación positiva y entrega física igual a cero al corte.|conteo|Calculado
+gold_meta_corte|recursos_programados|Suma de los recursos programados para el año en las actividades de la meta.|millones de pesos corrientes|Gestión-Inversión (SDP)
+gold_meta_corte|recursos_comprometidos|Suma de los recursos comprometidos o contratados del año.|millones de pesos corrientes|Gestión-Inversión (SDP)
+gold_meta_corte|recursos_girados|Suma de los giros (pagos) del año.|millones de pesos corrientes|Gestión-Inversión (SDP)
+gold_meta_corte|tipo_anualizacion_predominante|Tipo de anualización más frecuente entre las actividades de la meta: Suma, Constante, Creciente o Decreciente.|categoría|Gestión-Inversión (SDP)
+gold_meta_corte|sector_principal|Sector que concentra más recursos programados de la meta.|texto|Calculado
+gold_meta_corte|entidad_principal|Sigla de la entidad que concentra más recursos programados de la meta.|texto|Calculado
+gold_meta_corte|pct_compromisos|Ejecución financiera: recursos comprometidos / recursos programados del año.|%|Calculado
+gold_meta_corte|pct_giros|Recursos girados / recursos programados del año.|%|Calculado
+gold_meta_corte|pct_actividades_entrega_cero|Actividades con entrega cero / actividades con programación positiva.|%|Calculado
+gold_meta_corte|tiene_datos_financieros|Verdadero si el corte tiene archivo de Gestión-Inversión (septiembre de 2024 no lo tiene).|sí/no|Calculado
+gold_meta_corte|avance_esperado_lineal|Referencia exploratoria: parte del año transcurrida (marzo 25, junio 50, septiembre 75, diciembre 100). No es una obligación oficial de la meta.|%|Calculado
+gold_meta_corte|brecha_fisico_financiera|pct_compromisos menos avance_vigencia. Positivo: el dinero va más adelantado que la entrega física.|puntos porcentuales|Calculado
+gold_meta_corte|n_relatos_retraso|Número de relatos 'Retrasos y soluciones' leídos para la meta en ese corte (uno por entidad e indicador).|conteo|PDF Gestión-Inversión por entidad
+gold_meta_corte|menciona_dificultad|Verdadero si algún relato reconoce un retraso, demora, rezago o dificultad.|sí/no|Análisis de texto
+gold_meta_corte|estado_narrativa|Lectura resumida del relato de retrasos. Si varias entidades reportan, queda el estado más delicado.|categoría|Análisis de texto
+gold_meta_corte|n_barreras_distintas|Cuántas categorías de barrera distintas aparecen en los relatos de la meta.|conteo|Análisis de texto
+gold_meta_corte|corte_con_narrativa|Verdadero si para ese corte existe el PDF por entidad (hoy: sep-2024, dic-2024, mar-2026, jun-2026).|sí/no|Calculado
+gold_meta_corte|fecha_corte_siguiente|Fecha del corte inmediatamente posterior de la misma meta.|fecha|Calculado
+gold_meta_corte|avance_vigencia_siguiente|avance_vigencia observado en el corte siguiente. Sirve para comprobar si la alerta se cumplió. NO debe usarse como variable explicativa.|%|Calculado
+gold_meta_corte|grupo_dea|Grupo de metas comparables usado para medir eficiencia: mismo tipo de anualización y mismo sector. Vacío si el grupo tiene menos de 8 metas o la meta no comprometió recursos.|texto|Calculado
+gold_meta_corte|eficiencia_dea|Eficiencia técnica relativa (DEA). 1 = ninguna meta comparable logró más avance físico con igual o menos dinero. 0,6 = con ese dinero, las mejores del grupo lograron un avance equivalente a 1/0,6 veces el de esta meta. Vacío si el grupo es inestable.|0 a 1|DEA
+gold_meta_corte|brecha_eficiencia|1 menos eficiencia_dea: qué tan lejos está la meta de las mejores de su grupo.|0 a 1|DEA
+gold_meta_corte|en_frontera|Verdadero si la meta es una de las de mejor desempeño de su grupo (eficiencia 1).|sí/no|DEA
+gold_meta_corte|holgura_insumo_pct|Parte de los recursos comprometidos que, comparada con la frontera, no habría sido necesaria para el avance logrado.|%|DEA
+gold_meta_corte|grupo_estable|Verdadero si el orden de las metas del grupo se mantiene al medir con giros en vez de compromisos. Los grupos inestables no se usan para concluir.|sí/no|DEA
+gold_meta_corte|en_rezago_actual|1 si en este corte la meta está en el 20 % más bajo de avance físico entre las metas de su mismo tipo de anualización.|1/0|Calculado
+gold_meta_corte|riesgo_relativo_siguiente|Variable objetivo PRINCIPAL: 1 si en el corte siguiente la meta queda en el 20 % más bajo de avance entre las metas de su tipo de anualización. NO usar como variable explicativa.|1/0|Calculado
+gold_meta_corte|riesgo_lineal_siguiente|Variable objetivo alterna: 1 si en el corte siguiente el avance del año queda por debajo del 70 % de lo esperado con avance parejo (marzo 25, junio 50...). NO usar como variable explicativa.|1/0|Calculado
+gold_meta_corte|riesgo_cierre_anio|Variable objetivo alterna: 1 si la meta cierra el año (corte de diciembre) con avance inferior a 90 %. Solo para cortes de marzo, junio y septiembre de años ya cerrados. NO usar como variable explicativa.|1/0|Calculado
+gold_actividad_corte|fecha_corte|Fecha del corte de seguimiento.|fecha|Gestión-Inversión (SDP)
+gold_actividad_corte|vigencia|Año que la fila está reportando.|año|Gestión-Inversión (SDP)
+gold_actividad_corte|sector_codigo|Código del sector administrativo.|código|Gestión-Inversión (SDP)
+gold_actividad_corte|sector_nombre|Nombre del sector.|texto|Gestión-Inversión (SDP)
+gold_actividad_corte|entidad_codigo|Código de la entidad responsable.|código|Gestión-Inversión (SDP)
+gold_actividad_corte|entidad_sigla|Sigla de la entidad.|texto|Gestión-Inversión (SDP)
+gold_actividad_corte|entidad_nombre|Nombre de la entidad.|texto|Gestión-Inversión (SDP)
+gold_actividad_corte|objetivo_codigo|Código del objetivo estratégico.|código|Gestión-Inversión (SDP)
+gold_actividad_corte|programa_codigo|Código del programa.|código|Gestión-Inversión (SDP)
+gold_actividad_corte|meta_producto_codigo|Meta producto a la que aporta la actividad.|código|Gestión-Inversión (SDP)
+gold_actividad_corte|proyecto_codigo|Código del proyecto de inversión.|código|Gestión-Inversión (SDP)
+gold_actividad_corte|proyecto_nombre|Nombre del proyecto de inversión.|texto|Gestión-Inversión (SDP)
+gold_actividad_corte|proyecto_actividad_codigo|Código de la actividad dentro del proyecto. Entidad + proyecto + actividad identifican la actividad.|código|Gestión-Inversión (SDP)
+gold_actividad_corte|proyecto_actividad_nombre|Enunciado de la actividad.|texto|Gestión-Inversión (SDP)
+gold_actividad_corte|tipo_anualizacion|Cómo se acumula la actividad: Suma (se suman los años), Constante (se repite cada año), Creciente o Decreciente (niveles).|categoría|Gestión-Inversión (SDP)
+gold_actividad_corte|fila_rezagada|Verdadero si el archivo del corte trae el seguimiento de un año anterior. Estas filas no se suman en gold_meta_corte.|sí/no|Calculado
+gold_actividad_corte|fisico_programado|Magnitud física programada para el año.|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|fisico_entregado|Magnitud física entregada al corte.|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|pct_fisico_entregado|Porcentaje de entrega física del año, tal como lo publica la fuente.|%|Gestión-Inversión (SDP)
+gold_actividad_corte|recursos_programados|Recursos programados para el año.|millones de pesos corrientes|Gestión-Inversión (SDP)
+gold_actividad_corte|recursos_comprometidos|Recursos comprometidos o contratados del año.|millones de pesos corrientes|Gestión-Inversión (SDP)
+gold_actividad_corte|recursos_girados|Giros (pagos) del año.|millones de pesos corrientes|Gestión-Inversión (SDP)
+gold_actividad_corte|pct_compromisos|Recursos comprometidos / programados del año.|%|Calculado
+gold_actividad_corte|pct_giros|Recursos girados / programados del año.|%|Calculado
+gold_actividad_corte|fisico_total_programado|Magnitud física programada para todo el cuatrienio.|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|fisico_total_entregado|Magnitud física entregada acumulada, según la fuente.|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|pct_fisico_total_entregado|Porcentaje de entrega frente al cuatrienio, según la fuente.|%|Gestión-Inversión (SDP)
+gold_actividad_corte|recursos_total_programados_constantes|Recursos programados del cuatrienio a precios constantes (comparables entre años).|millones de pesos constantes|Gestión-Inversión (SDP)
+gold_actividad_corte|recursos_total_girados_constantes|Giros acumulados a precios constantes.|millones de pesos constantes|Gestión-Inversión (SDP)
+gold_actividad_corte|entrega_cero_con_programacion|Verdadero si la actividad tenía programación positiva para el año y su entrega al corte es cero.|sí/no|Calculado
+gold_narrativa_fragmento|fragmento_id|Identificador estable del relato: corte-entidad-meta-indicador-campo (R = retrasos, A = avances).|código|Calculado
+gold_narrativa_fragmento|fecha_corte|Corte del reporte, leído de la portada del PDF.|fecha|PDF Gestión-Inversión por entidad
+gold_narrativa_fragmento|entidad_codigo|Entidad que escribió el relato.|código|PDF Gestión-Inversión por entidad
+gold_narrativa_fragmento|entidad_nombre|Nombre de la entidad, como aparece en el PDF.|texto|PDF Gestión-Inversión por entidad
+gold_narrativa_fragmento|meta_producto_codigo|Meta producto a la que se refiere el relato.|código|PDF Gestión-Inversión por entidad
+gold_narrativa_fragmento|indicador_codigo|Indicador bajo el cual aparece el relato.|código|PDF Gestión-Inversión por entidad
+gold_narrativa_fragmento|indicador_nombre|Nombre del indicador.|texto|PDF Gestión-Inversión por entidad
+gold_narrativa_fragmento|campo|Cuál de los dos relatos es: retrasos_y_soluciones o avances_y_logros.|categoría|PDF Gestión-Inversión por entidad
+gold_narrativa_fragmento|archivo_fuente|Nombre del PDF del que se leyó.|texto|Calculado
+gold_narrativa_fragmento|texto|Relato completo, tal como lo escribió la entidad.|texto|PDF Gestión-Inversión por entidad
+gold_narrativa_fragmento|pagina_inicio|Página del PDF donde empieza el relato.|número de página|Calculado
+gold_narrativa_fragmento|pagina_fin|Página del PDF donde termina.|número de página|Calculado
+gold_narrativa_fragmento|estado_retraso|Solo para retrasos_y_soluciones: Sin retraso declarado, Avance programado para más adelante, Texto sin clasificar, Retraso sin causa clasificada o Barrera identificada.|categoría|Análisis de texto
+gold_narrativa_fragmento|declara_sin_retraso|Verdadero si alguna frase afirma que no hubo retrasos.|sí/no|Análisis de texto
+gold_narrativa_fragmento|menciona_dificultad|Verdadero si alguna frase (que no sea de solución) reconoce retraso, demora, rezago o dificultad.|sí/no|Análisis de texto
+gold_narrativa_fragmento|n_barreras|Número de categorías de barrera encontradas en el relato.|conteo|Análisis de texto
+gold_barrera_fragmento|fragmento_id|Relato en el que se encontró la barrera (enlaza con gold_narrativa_fragmento).|código|Calculado
+gold_barrera_fragmento|fecha_corte|Corte del reporte.|fecha|PDF Gestión-Inversión por entidad
+gold_barrera_fragmento|entidad_codigo|Entidad que escribió el relato.|código|PDF Gestión-Inversión por entidad
+gold_barrera_fragmento|meta_producto_codigo|Meta producto del relato.|código|PDF Gestión-Inversión por entidad
+gold_barrera_fragmento|indicador_codigo|Indicador del relato.|código|PDF Gestión-Inversión por entidad
+gold_barrera_fragmento|categoria|Clave de la categoría (ver gold_catalogo_barreras).|categoría|Análisis de texto
+gold_barrera_fragmento|categoria_nombre|Nombre legible de la categoría.|texto|Análisis de texto
+gold_barrera_fragmento|es_barrera|Falso solo para 'Avance programado para más adelante', que explica el avance pero no es un obstáculo.|sí/no|Análisis de texto
+gold_barrera_fragmento|frase_evidencia|Primera frase del relato que activó la categoría. Permite comprobar la clasificación leyendo.|texto|PDF Gestión-Inversión por entidad
+gold_meta_corte|barrera_contratacion|1 si algún relato de la meta menciona la barrera 'Contratación': Demoras o problemas en procesos de selección, adjudicación, firma, ejecución o liquidación de contratos y convenios.|1/0|Análisis de texto
+gold_meta_corte|barrera_coordinacion_recursos_y_tecnica|1 si algún relato de la meta menciona la barrera 'Coordinación, recursos y aspectos técnicos': Dependencia de otras entidades, recursos insuficientes, estudios u obras que toman más tiempo, o fallas de información y sistemas. Se agrupan porque el texto no permite separarlas. FIABILIDAD BAJA (precisión 44 % en la auditoría): sirve para ubicar la frase y leerla, no para contar ni como variable del modelo.|1/0|Análisis de texto
+gold_meta_corte|barrera_tramites_y_permisos|1 si algún relato de la meta menciona la barrera 'Trámites, permisos y asuntos jurídicos': Licencias, permisos, aprobaciones, conceptos, actos administrativos o gestión de predios pendientes.|1/0|Análisis de texto
+gold_meta_corte|barrera_talento_y_capacidad|1 si algún relato de la meta menciona la barrera 'Talento humano y capacidad operativa': Falta o cambio de personal, equipos insuficientes o capacidad limitada para atender la carga de trabajo.|1/0|Análisis de texto
+gold_meta_corte|barrera_demanda_y_poblacion|1 si algún relato de la meta menciona la barrera 'Demanda y participación de la población': Menos (o más) personas de las previstas: baja asistencia, deserción, requisitos que los beneficiarios no cumplen.|1/0|Análisis de texto
+gold_meta_corte|barrera_factores_externos|1 si algún relato de la meta menciona la barrera 'Factores externos': Hechos fuera del control de la entidad: clima, orden público, emergencias, ley de garantías, paros.|1/0|Análisis de texto

@@ -1,0 +1,7 @@
+# Los datos no deben alterarse al clonar: Git no les cambia los saltos de línea.
+# Si lo hiciera, dejarían de coincidir con las huellas de data/FUENTES.csv.
+data/**  -text
+*.csv    -text
+*.pdf    binary
+*.xlsx   binary
+tablero/index.html -text

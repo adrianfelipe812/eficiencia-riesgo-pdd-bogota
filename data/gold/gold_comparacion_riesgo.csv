@@ -1,0 +1,10 @@
+﻿comparada_con|fraccion_rezagada|pct_marcado_min|pct_marcado_max|validez_precision_pct|validez_cobertura_pct|validez_f1_pct|roc_auc_prueba|pr_auc_prueba|veces_mejor_que_azar|es_la_configurada
+Todas las metas|0,2|20,0|22,1|88,8|92,1|90,4|0,855|0,697|3,4|No
+Todas las metas|0,25|25,2|25,6|76,6|100,0|86,8|0,859|0,71|2,82|No
+Todas las metas|0,33|27,5|33,2|66,1|100,0|79,6|0,855|0,73|2,22|No
+Mismo tipo de anualización|0,2|20,2|23,8|84,9|89,0|86,9|0,9|0,756|3,69|Sí
+Mismo tipo de anualización|0,25|24,2|25,9|76,7|98,2|86,1|0,878|0,749|2,93|No
+Mismo tipo de anualización|0,33|27,5|34,1|66,9|100,0|80,2|0,854|0,744|2,23|No
+Mismo tipo y sector|0,2|16,7|29,4|80,9|77,4|79,1|0,884|0,752|3,13|No
+Mismo tipo y sector|0,25|19,3|32,2|75,4|80,5|77,9|0,843|0,701|2,37|No
+Mismo tipo y sector|0,33|21,6|35,5|72,8|86,6|79,1|0,831|0,676|2,0|No

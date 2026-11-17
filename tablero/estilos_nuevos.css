@@ -1,0 +1,41 @@
+/* Añadidos para la versión conectada a la capa Gold. */
+.filters{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stats{grid-template-columns:repeat(5,1fr)}
+.badge.teal{background:#e3f3f2;color:#066d70}
+.badge.blue{background:#e8eef8;color:#35548c}
+.badge.ref{background:#f4f1ea;color:#7a6a45;border:1px dashed #cdbf9c}
+.view{display:none}.view.active{display:block}
+.chartslot{border:1.5px dashed #b9cdd3;border-radius:9px;background:#fafcfc;color:var(--muted);font-size:11px;line-height:1.6;padding:22px 16px;text-align:center;min-height:120px;display:flex;flex-direction:column;justify-content:center}
+.chartslot b{color:var(--ink);font-size:12px;display:block;margin-bottom:4px}
+.chartrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 18px}
+.relato{border:1px solid var(--line);border-radius:7px;padding:12px;margin:10px 0}
+.relato .who{font-size:11px;font-weight:650;margin-bottom:6px}
+.evid{font-size:11px;line-height:1.65;margin:8px 0;padding:8px 10px;background:#fff7ee;border-left:3px solid var(--orange);border-radius:0 5px 5px 0}
+.evid.ref{background:#f8f6f0;border-left-color:#cdbf9c}
+.resumen td,.resumen th{padding:11px 12px}.resumen tbody tr{cursor:pointer}.resumen tbody tr:hover{background:#f3fafa}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.tabsel{display:flex;gap:8px;margin:0 0 14px}
+.tabsel button.active{background:#e7f4f3;border-color:#8bc4c2;color:#066d70}
+th.sortable{cursor:pointer}th.sortable:hover{color:var(--teal)}
+@media(max-width:1150px){.filters{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(3,1fr)}.chartrow{grid-template-columns:1fr}}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
+/* Gráficas */
+.grafica{background:white;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.gtitulo{font-size:13px;font-weight:650;margin-bottom:6px}
+.gleyenda{display:flex;gap:14px;flex-wrap:wrap;font-size:10px;color:var(--muted);margin-bottom:4px}
+.gclave{display:inline-flex;align-items:center;gap:5px}
+.gclave i{display:inline-block;width:10px;height:10px;border-radius:2px}.gclave i.punto{border-radius:50%}.gclave i.linea{height:3px;width:14px}
+.grafica svg{width:100%;height:auto;display:block}
+.gnota{font-size:10px;color:var(--muted);line-height:1.55;margin-top:6px}
+.gvacia{padding:34px 10px;text-align:center;color:var(--muted);font-size:11px}
+.grejilla{stroke:#e6edef;stroke-width:1}
+.geje{font-size:9px;fill:#647982}.getiqueta{font-size:9.5px;fill:#183743;font-weight:600}
+.gfila{font-size:10px;fill:#183743}.gfila.tenue{fill:#8a9aa1}
+#gtip{position:fixed;display:none;z-index:9;background:#112d3e;color:white;font-size:11px;line-height:1.45;padding:6px 9px;border-radius:6px;max-width:280px;pointer-events:none}
+/* Gráficas: criterios del curso de Visualización de Datos (título activo, gris + un color, etiquetado directo) */
+.gtitulo{font-size:13.5px;line-height:1.4;margin-bottom:3px}
+.gsub{font-size:10.5px;color:var(--muted);line-height:1.5;margin-bottom:6px}
+.gdirecta{font-size:9.5px;fill:#647982}.gdirecta.foco{fill:#8f4510;font-weight:650}
+.gpanel{font-size:10px;fill:#183743;font-weight:650}
+.gfila.fuerte{font-weight:700}
+.porque{font-size:11px;line-height:1.65;margin:10px 0 0;padding:10px 12px;background:#f5f9fa;border-left:3px solid #b75b16;border-radius:0 6px 6px 0}

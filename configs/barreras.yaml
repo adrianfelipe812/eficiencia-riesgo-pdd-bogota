@@ -1,0 +1,202 @@
+# Diccionario de barreras de ejecución.
+#
+# Cómo se construyó: se tomaron los relatos "Retrasos y soluciones" de los cortes
+# con PDF disponible, se descartaron las frases que solo dicen "no hubo retrasos" y
+# se contaron las palabras y expresiones más repetidas en el resto. Las categorías
+# agrupan esas expresiones; no vienen de una lista teórica previa. Después se
+# corrigió con una muestra leída por una persona (ver docs/AUDITORIA.md).
+#
+# Cómo se usa: el texto se pasa a minúsculas y sin tildes, y se divide en frases.
+# Una frase solo cuenta para una barrera si cumple TRES condiciones:
+#   1. no es una frase de "no hubo retrasos",
+#   2. no es una frase de solución (lo que la entidad hará para corregir),
+#   3. contiene una señal de problema (retraso, pendiente, debido a, suspendido...).
+# Así, "se fortalecerá la articulación interinstitucional" no cuenta como barrera,
+# pero "el retraso se debe a la articulación interinstitucional" sí.
+#
+# Para agregar o quitar expresiones basta editar este archivo
+# (\w* significa "cualquier terminación").
+
+categorias:
+  contratacion:
+    nombre: "Contratación"
+    descripcion: "Demoras o problemas en procesos de selección, adjudicación, firma, ejecución o liquidación de contratos y convenios."
+    expresiones:
+      - 'contrataci\w+'
+      - '(pre)?contractual\w*'
+      - 'licitaci\w+|licitatori\w+'
+      - 'adjudic\w+'
+      - 'proceso\w* de seleccion'
+      - 'seleccion de (las |los )?(empresas|proveedores|oferentes|contratistas)'
+      - 'adenda\w*'
+      - 'desiert\w+'
+      - 'contratista\w*'
+      - 'proveedor\w*|cotizacion\w*'
+      - 'interventor\w+'
+      - 'suscripcion del (contrato|convenio)'
+      - 'plan anual de adquisiciones|\bpaa\b'
+      - 'prorrog\w+'
+      - '(contrato|convenio)\w* [^.;]{0,60}suspendid\w+|suspension del (contrato|convenio)'
+      - '(terminacion|liquidacion|caducidad) (del|de los) contrato\w*|caducidad|inhabilidad'
+      - 'incumplimientos? contractual\w*|presunto incumplimiento|proceso de incumplimiento'
+      - 'incumplimiento\w* (del|de la|por parte del) (contratista|operador|proveedor)'
+      - 'vigente el contrato'
+
+  coordinacion_recursos_y_tecnica:
+    nombre: "Coordinación, recursos y aspectos técnicos"
+    descripcion: "Dependencia de otras entidades, recursos insuficientes, estudios u obras que toman más tiempo, o fallas de información y sistemas. Se agrupan porque el texto no permite separarlas. FIABILIDAD BAJA (precisión 44 % en la auditoría): sirve para ubicar la frase y leerla, no para contar ni como variable del modelo."
+    expresiones:
+      # presupuesto y recursos
+      - 'presupuestal\w*'
+      - '(falta|insuficiencia|escasez|limitacion\w*|restriccion\w*|reduccion|recorte\w*|disminucion|consecucion) de (los )?recursos'
+      - 'recursos (insuficientes|limitados|no fueron|no han sido)'
+      - 'no (se )?cuenta con (los |la )?(recursos|disponibilidad)'
+      - 'asignacion de (los )?recursos'
+      - 'aplazamiento|recorte\w*'
+      - 'vigencias futuras'
+      - 'deficit'
+      - 'disponibilidad de recursos'
+      - 'alza de precios|presupuesto asignado'
+      # dependencia de otras entidades o actores
+      - 'articulacion (inter\w+|con)'
+      - 'interinstitucional\w*|intersectorial\w*'
+      - 'entidades externas|otras entidades|otros sectores'
+      - 'coordinacion con'
+      - '(convenio|reunion|acuerdo|negociaci\w+) con (la|el|los|las)\b'
+      - 'a la espera de|en espera de'
+      - 'depende\w* (de|en)'
+      - 'por parte de (la|el|los|las) (nacion|ministerio|operador\w*|sena|alcaldia\w*|empresa\w*|superintendencia|comision)'
+      - 'respuesta (de|por parte)'
+      # aspectos técnicos y de obra
+      - 'estudios y disenos|\bdisenos\b'
+      - 'ajuste\w* (tecnico\w*|al diseno|a los disenos)'
+      - '(?<!contrato de )(?<!contratos de )(?<!mano de )\bobras?\b'
+      - 'fase constructiva|frentes? de obra'
+      - 'redes (de|humedas|secas)'
+      - 'especificaciones tecnicas|condiciones tecnicas'
+      - 'dificultades tecnicas|fallas? tecnicas?'
+      # información y sistemas
+      - 'sistema\w* de informacion'
+      - 'plataforma\w*'
+      - 'aplicativo\w*|aplicacion (sia|movil)'
+      - 'calidad de (la informacion|los datos|el dato)'
+      - 'rezago (de|en) (la )?informacion'
+      - 'informacion (incompleta|desactualizada)'
+      - 'recopilar datos|consolidacion de (la )?informacion'
+      - 'registros duplicados|migracion de datos'
+      - 'tecnologic\w+'
+
+  tramites_y_permisos:
+    nombre: "Trámites, permisos y asuntos jurídicos"
+    descripcion: "Licencias, permisos, aprobaciones, conceptos, actos administrativos o gestión de predios pendientes."
+    expresiones:
+      - 'tramites?\b(?! de (presunto |liquidaci))'
+      - 'licencia\w*'
+      - 'permiso\w*'
+      - 'aprobacion\w*'
+      - 'viabilidad\w*|viabili[cz]\w+'
+      - 'acto\w* administrativo\w*'
+      - 'concepto\w* (tecnico|juridico|favorable|previo|de viabilidad)\w*'
+      - 'predio\w*|predial\w*'
+      - 'avaluo\w*'
+      - 'contingencia\w* juridica\w*'
+      - 'expedicion (del|de la|de los)'
+      - 'curaduria\w*'
+
+  talento_y_capacidad:
+    nombre: "Talento humano y capacidad operativa"
+    descripcion: "Falta o cambio de personal, equipos insuficientes o capacidad limitada para atender la carga de trabajo."
+    expresiones:
+      - 'talento humano'
+      - 'capacidad (operativa|tecnica)'
+      - 'rotacion'
+      - '(falta|insuficiencia|vinculacion|contratacion|cambio\w*) de(l)? (personal|profesionales|equipo\w*)'
+      - 'provision de empleos'
+      - 'cambio\w* de (administracion|director\w*|gerente\w*)'
+      - 'nuevo director|nueva directora'
+      - 'carga\w* (laboral|operativa|de trabajo)'
+      - 'reasignacion de (tareas|funciones|personal)'
+
+  demanda_y_poblacion:
+    nombre: "Demanda y participación de la población"
+    descripcion: "Menos (o más) personas de las previstas: baja asistencia, deserción, requisitos que los beneficiarios no cumplen."
+    expresiones:
+      - '\bdemanda\b'
+      - 'desercion|desvincul\w+'
+      - '(baja|menor|variaciones en|disminucion (de|en)) (los |la |el )?(niveles de )?(asistencia|participacion|afluencia|convocatoria|matricula)'
+      - 'inasistencia'
+      - 'cancelacion de (reuniones|citas|eventos)'
+      - 'cumplimiento de requisitos'
+      - 'hogares postulad\w+'
+      - 'poblacion (flotante|que aun no|objetivo no)'
+      - 'comportamiento decreciente'
+
+  factores_externos:
+    nombre: "Factores externos"
+    descripcion: "Hechos fuera del control de la entidad: clima, orden público, emergencias, ley de garantías, paros."
+    expresiones:
+      - 'lluvia\w*|invernal|climatic\w+'
+      - 'orden publico'
+      - 'ley de garantias|ley 996'
+      - '\bparo\b|protesta\w*'
+      - 'fuerza mayor|caso fortuito'
+      - 'factores (externos|exogenos|imprevistos)|situaciones externas'
+
+  programacion_diferida:
+    nombre: "Avance programado para más adelante"
+    descripcion: "No es una barrera: la entidad explica que el resultado está previsto para un corte posterior (por ejemplo, el último trimestre)."
+    es_barrera: false
+    expresiones:
+      - 'programad\w+ (para|al) (el |la |los |las )?(ultimo|cuarto|tercer|segundo|corte|cierre|final|diciembre|noviembre|octubre|septiembre|siguiente|proxim\w+)'
+      - 'previst\w+ para (dar inicio|iniciar|el (ultimo|cuarto|tercer|segundo))'
+      - 'se reportara (al|en el|en la|una vez)|sera reportado en'
+      - 'reporte (semestral|anual)'
+      - '(previst\w+|proyectad\w+|estimad?\w*|se espera) [^.;]{0,60}(ultimo trimestre|cuarto trimestre|segundo semestre)'
+      - 'no (esta|se encuentra) programad\w+'
+      - 'no (presenta|tiene|cuenta con) programacion'
+      - 'inicia su ejecucion en'
+
+# Frases que declaran que NO hubo retraso o que el hecho no afectó la meta. Se evalúan
+# frase por frase, de modo que "No hubo retrasos; sin embargo, el contrato X se demoró"
+# sí deja ver la barrera.
+sin_retraso:
+  - '\b(no|sin|ningun\w*|tampoco)\b[^.;]{0,80}(retras|retraz|atras|demora|rezago|dificultad|inconvenient|novedad)'
+  - '^\W*(n\.?/?a\.?|no aplica\w*|ningun[oa]|no|no presenta|no se present\w+|no se han presentado|no se reporta\w*|no se evidencia\w*|no se registra\w*|sin novedad\w*)\W*$'
+  - '(conforme|de acuerdo|acorde|segun) (a|con)? ?lo (programado|planeado|previsto)'
+  - '^\W*no (se )?(han? )?(present|report|evidenci|registr|identific)\w*'
+  - 'de acuerdo (con|al|a) (el |la )?(cronograma|programacion)'
+  - '(sin|no) (afect|impact)\w+ (el |la |los |las |al )?(cumplimiento|desarrollo|cronograma|avance|meta)'
+
+# Frases de solución: describen lo que la entidad hará o hizo para corregir. No cuentan
+# como barrera. Todo lo que sigue a un rótulo "Solución:" o "Soluciones:" tampoco.
+solucion:
+  - '^\W*(como solucion|como medida|para (mitigar|superar|atender|subsanar|resolver|solucionar))'
+  - '^\W*se (fortalec|priorizar|continuar|realizara|adelantar[aá]|implementar[aá]n?|han implementado|realizaron mesas)\w*'
+  - '^\W*(continuar|seguir|retomar|fortalecer|optimizar|desarrollar las acciones) '
+  - '(fue posible|se logro) (atender|superar|mitigar)'
+  - 'fueron (atendid|superad|gestionad|solucionad)\w+'
+
+# Señal de problema: una frase debe contener al menos una para contar como barrera.
+senal_de_problema:
+  - 'retras\w+|atras\w+|demora\w*|rezag\w+'
+  - 'dificultad\w*|inconveniente\w*|limitacion\w*|limit[oó]\w*|problema\w*|impase|cuello\w* de botella'
+  - 'pendiente\w*|suspendid\w+|suspension|aplazad\w+|desviaci\w+|contingencia\w*'
+  - 'debido a|obedece a|se debe a|se debio|a causa de|por cuenta de|en virtud de|motivo por el cual|lo que (impide|genero|retrasa|obligo)'
+  - 'a la espera|en espera|tiempos de espera'
+  - 'depende\w*|sujet[oa] a'
+  - 'incumplimiento\w*|caducidad|desiert\w+|inhabilidad'
+  - 'afect\w+|impid\w+|impedid\w+|impact\w+'
+  - 'falta de|baj[ao] |menor |decreciente|deficit|alza de'
+  - 'no (se )?(ha|han|cuenta|logro|pudo|fue posible|se alcanzo|se cumplio|puede|refleja)\b'
+  - 'inferior a (lo|la) programad\w+|por debajo de (lo|la) (programad\w+|esperad\w+|meta)'
+  - 'reprogram\w+|alerta\w*|variaciones|fluctuaciones|incidi\w+'
+
+# Retraso reconocido: aunque no se identifique la causa, la entidad admite que hubo
+# retraso o incumplimiento. Sirve para no pasar por alto relatos como "Se presenta
+# retraso en las acciones de monitoreo".
+retraso_reconocido:
+  - 'retras\w+|atras\w+|demora\w*|rezag\w+'
+  - 'dificultad\w*|inconveniente\w*|impase|cuello\w* de botella'
+  - 'no (se logro|fue posible|se alcanzo|se ha logrado|se cumplio|se dio cumplimiento)'
+  - 'inferior a (lo|la) programad\w+|por debajo de (lo|la) (programad\w+|esperad\w+|meta)'
+  - 'reprogram\w+'

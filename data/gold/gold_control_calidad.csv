@@ -1,0 +1,17 @@
+﻿comprobacion|esperado|obtenido|cumple
+Actividades: mismas filas que Silver|13089|13089|Sí
+Actividades: sin duplicados por actividad y corte|0|0|Sí
+Metas: mismas filas que Silver (meta x corte)|3825|3825|Sí
+Metas: sin duplicados por meta y corte|0|0|Sí
+Metas: cada corte tiene las 425 metas producto|425|425|Sí
+Dinero: recursos programados no cambian al agregar (millones)|287263316.17|287263316.17|Sí
+Dinero: giros no cambian al agregar (millones)|101498147.73|101498147.73|Sí
+Avance oficial: idéntico al de Silver (suma de avance_vigencia)|211644.54|211644.54|Sí
+Narrativa: relatos cuya entidad y meta existen en Gestión-Inversión (%)|100.0|100.0|Sí
+Narrativa: relatos cuyo indicador pertenece a esa meta según Avance del Plan (%)|100.0|100.0|Sí
+Narrativa: rótulos del PDF = relatos con texto + celdas vacías|4120|4120|Sí
+Narrativa: identificadores de relato sin repetir|0|0|Sí
+Tiempo: el corte siguiente siempre es posterior|True|True|Sí
+Tiempo: el último corte no tiene dato del futuro|0|0|Sí
+DEA: toda eficiencia está entre 0 y 1|True|True|Sí
+DEA: cada grupo evaluado tiene al menos una meta en la frontera|True|True|Sí
