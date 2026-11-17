@@ -8,7 +8,7 @@ El proyecto integra tres fuentes de seguimiento del Plan Distrital de Desarrollo
 1. medir la **eficiencia técnica** de las metas producto con Análisis Envolvente de Datos (DEA);
 2. identificar en los relatos las **barreras** de ejecución y relacionarlas con la eficiencia;
 3. **anticipar** qué metas quedarán rezagadas en el corte siguiente, con probabilidades calibradas, un umbral de alerta que pondera más omitir un rezago que dar una falsa alarma, y la explicación de cada alerta.
-
+ 
 El anteproyecto está en `Ante-proyecto-final.pdf`.
 
 ## Qué leer primero
