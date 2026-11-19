@@ -144,6 +144,24 @@ El modelo predictivo no debe conocer el futuro. Se comprobó que:
 - El último corte no tiene dato de corte siguiente (queda vacío, no en cero).
 - Solo cinco columnas contienen información posterior al corte: `fecha_corte_siguiente`, `avance_vigencia_siguiente`, `riesgo_relativo_siguiente`, `riesgo_lineal_siguiente` y `riesgo_cierre_anio`. Son lo que se quiere predecir y ninguna entra como variable explicativa; la auditoría lo comprueba contra la lista de variables del modelo.
 
+## 5b. Validación del tablero contra los archivos originales
+
+`scripts/validar_muestra.py` comprueba que lo que muestra el tablero (los datos que lleva dentro `tablero/index.html`) coincide con los Excel originales de la SDP del último corte, sin pasar por Silver ni Gold. Toma al azar, con semilla fija, una muestra de metas y de actividades:
+
+| Qué se revisa | Contra qué | Datos por elemento |
+|---|---|---|
+| Meta | Avance del Plan (hoja MetaProducto) y la suma de sus actividades en Gestión-Inversión | 9: nombre, avance de vigencia, transcurrido, cuatrienio, % comprometido, % girado, recursos programados, actividades programadas y sin entrega |
+| Actividad | Su fila en Gestión-Inversión (hoja datos) y `Normalizacion_Entidades.xlsx` | 26: meta, nombre, sector, entidad normalizada, tipo, programado, entregado, % entregado, recursos, comprometido, girado y los 15 valores de la gráfica de avance por año |
+| Tarjetas del Panorama | Recalculadas con todas las metas del corte | 3: % programado, % comprometido y % girado |
+
+Resultado al 19 de noviembre de 2026 (corte 30/09/2026, 25 metas y 25 actividades): **878 comprobaciones, 0 diferencias**. Los promedios del Panorama coinciden (68,04 %, 80,09 % y 48,67 %). La muestra incluye metas que comparten varias entidades (por ejemplo, la 2092 con cinco) y actividades de trece entidades.
+
+```bash
+python scripts/validar_muestra.py
+```
+
+Se puede ampliar la muestra (`--metas 50 --actividades 100`) o cambiar la semilla (`--semilla 7`). Termina con código 1 si encuentra alguna diferencia. Solo cubre el último corte, que es el único con los dos Excel originales en el repositorio; los cortes anteriores los compara `auditar_gold.py` por totales.
+
 ## 6. Límites que la auditoría no resuelve
 
 - **Relatos en 4 de 9 cortes.** La SDP no publicó el PDF por entidad en 2025 ni en septiembre de 2026, así que la narrativa no cubre esos cinco cortes.

@@ -69,6 +69,7 @@ Este procedimiento se probó en una copia limpia del repositorio, con un entorno
 | `python scripts/normalizar_entidades.py` | Normaliza las entidades en Silver a partir de `data/raw/Normalizacion_Entidades.xlsx` (antes de construir Gold) |
 | `python scripts/construir_gold.py` | Regenera las tablas de `data/gold/` (sobrescribe las publicadas) |
 | `python scripts/auditar_gold.py` | Compara las tablas con los archivos originales de la SDP |
+| `python scripts/validar_muestra.py` | Compara una muestra de metas y actividades del tablero con los Excel originales del último corte (25 y 25 por defecto) |
 | `python -m pytest -q` | Ejecuta las pruebas automáticas |
 | `python scripts/construir_plantilla.py` | Reconstruye el diseño del tablero (`tablero/plantilla_foco.html`) aplicando los ajustes `scripts/ajustar_*.py` al diseño original |
 | `python scripts/generar_tablero.py` | Regenera `tablero/index.html` a partir de las tablas de `data/gold/` |
@@ -110,7 +111,7 @@ Falta decidir qué hacer con las 5 de esas metas que **sí tienen recursos progr
 ```text
 configs/      pdd.yaml (parámetros), barreras.yaml (expresiones de cada barrera)
 pdd/          código: lectura de PDF, barreras, DEA, modelo, tablas Gold, auditoría
-scripts/      reproducir.py, construir_gold.py, auditar_gold.py, normalizar_entidades.py, generar_tablero.py,
+scripts/      reproducir.py, construir_gold.py, auditar_gold.py, validar_muestra.py, normalizar_entidades.py, generar_tablero.py,
               construir_plantilla.py y los ajustes de diseño del tablero (ajustar_*.py)
 auditoria/    relatos leídos por una persona para medir el acierto del clasificador
 data/silver/  datos de entrada consolidados por el scraper, más las entidades normalizadas (entidades/)
