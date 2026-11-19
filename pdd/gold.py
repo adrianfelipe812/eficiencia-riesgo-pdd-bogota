@@ -19,6 +19,7 @@ from pdd.barreras import ORDEN_ESTADOS, catalogo_barreras, clasificar_fragmentos
 from pdd.comun import a_fecha, a_numero, guardar_csv, leer_silver, razon, ruta_gold
 from pdd.dea import calcular_dea
 from pdd.diccionario import DICCIONARIO
+from pdd.entidades import nombres_normalizados
 from pdd.modelo import (agregar_objetivos, asociacion_barreras_eficiencia, comparar_definiciones_riesgo,
                         entrenar_y_evaluar)
 from pdd.narrativas import extraer_narrativas
@@ -50,6 +51,9 @@ def tabla_actividad_corte(config: dict) -> pd.DataFrame:
     t = gi[CONTEXTO].copy()
     t.insert(0, "fecha_corte", a_fecha(gi["fecha_corte"]))
     t.insert(1, "vigencia", gi["vigencia"])
+    # Nombre normalizado de la entidad (Silver: entidades/entidad.csv, de Normalizacion_Entidades.xlsx).
+    t.insert(t.columns.get_loc("entidad_nombre") + 1, "entidad_nombre_sigla",
+             t["entidad_codigo"].map(nombres_normalizados(config)).astype("string"))
     t["tipo_anualizacion"] = gi[p + "tipo_anualizacion"].str.strip()
     # Una fila es "rezagada" cuando el archivo de un corte trae el seguimiento de un año anterior.
     t["fila_rezagada"] = t["vigencia"] != t["fecha_corte"].dt.year
@@ -70,6 +74,19 @@ def tabla_actividad_corte(config: dict) -> pd.DataFrame:
     t["recursos_total_girados_constantes"] = a_numero(gi[p + "recktotal_giros"])
 
     t["entrega_cero_con_programacion"] = (t["fisico_programado"] > 0) & (t["fisico_entregado"] == 0)
+
+    # Avance físico año por año del Plan, como lo reporta el corte (bloques VIG1..VIG4): es la tabla
+    # «Año / Programación / Ejecución / Avance de la vigencia» de los reportes de la SDP.
+    for i, anio in sorted(config["plan"]["vigencias"].items()):
+        t[f"fisico_programado_{anio}"] = a_numero(gi[f"{p}magvig{i}_programado"])
+        t[f"fisico_entregado_{anio}"] = a_numero(gi[f"{p}magvig{i}_entregado"])
+        t[f"pct_fisico_entregado_{anio}"] = a_numero(gi[f"{p}magvig{i}_porcentregado"]).round(2)
+    # Compromisos ya adquiridos para años posteriores al reportado (vigencias futuras).
+    futuro = pd.Series(0.0, index=gi.index)
+    for i in config["plan"]["vigencias"]:
+        posterior = gi["indice_vigencia"] < i
+        futuro = futuro + a_numero(gi[f"{p}recvig{i}_compromisos_contratado"]).fillna(0).where(posterior, 0)
+    t["recursos_comprometidos_vigencias_futuras"] = futuro
     return t.sort_values(["fecha_corte", *ID_ACTIVIDAD]).reset_index(drop=True)
 
 
@@ -169,6 +186,11 @@ def control_calidad(config: dict, act: pd.DataFrame, meta: pd.DataFrame, fragmen
     orden_ok = (meta["fecha_corte_siguiente"].isna() | (meta["fecha_corte_siguiente"] > meta["fecha_corte"])).all()
     ultimo = meta["fecha_corte"].max()
     futuro_en_ultimo = int(meta.loc[meta["fecha_corte"] == ultimo, "riesgo_relativo_siguiente"].notna().sum())
+    # La serie por año debe repetir, en el año reportado, lo programado y entregado del año.
+    anios = sorted(config["plan"]["vigencias"].values())
+    del_anio = lambda campo: pd.Series([act.at[i, f"{campo}_{a}"] for i, a in act["vigencia"].items()], index=act.index)
+    serie_ok = all(act[campo].fillna(-1).eq(del_anio(campo).astype("Float64").fillna(-1)).all()
+                   for campo in ["fisico_programado", "fisico_entregado"]) and act["vigencia"].isin(anios).all()
 
     pruebas = [
         ("Actividades: mismas filas que Silver", len(gi), len(act)),
@@ -190,6 +212,11 @@ def control_calidad(config: dict, act: pd.DataFrame, meta: pd.DataFrame, fragmen
         ("Narrativa: rótulos del PDF = relatos con texto + celdas vacías", int(extraccion["rotulos_en_pdf"].sum()),
          int(extraccion["relatos_con_texto"].sum() + extraccion["celdas_vacias"].sum())),
         ("Narrativa: identificadores de relato sin repetir", 0, int(fragmentos["fragmento_id"].duplicated().sum())),
+        ("Entidades: actividades con nombre normalizado (%)", 100.0,
+         round(100 * float(act["entidad_nombre_sigla"].notna().mean()), 2)),
+        ("Entidades: relatos con nombre normalizado (%)", 100.0,
+         round(100 * float(fragmentos["entidad_nombre_sigla"].notna().mean()), 2)),
+        ("Actividades: la serie por año coincide con lo programado y entregado del año reportado", True, bool(serie_ok)),
         ("Tiempo: el corte siguiente siempre es posterior", True, bool(orden_ok)),
         ("Tiempo: el último corte no tiene dato del futuro", 0, futuro_en_ultimo),
         ("DEA: toda eficiencia está entre 0 y 1", True,
@@ -204,7 +231,7 @@ def control_calidad(config: dict, act: pd.DataFrame, meta: pd.DataFrame, fragmen
 
 DESCRIPCION_TABLAS = {
     "gold_meta_corte": "Tabla principal. Una fila por meta producto y corte: avance físico oficial, dinero, barreras narradas y lo que pasó en el corte siguiente.",
-    "gold_actividad_corte": "Detalle. Una fila por actividad y corte, con lo programado y entregado del año en curso.",
+    "gold_actividad_corte": "Detalle. Una fila por actividad y corte, con lo programado y entregado del año en curso, el avance año por año del Plan y los compromisos en vigencias futuras.",
     "gold_narrativa_fragmento": "Cada relato 'Retrasos y soluciones' o 'Avances y Logros' leído del PDF, con su página y su clasificación.",
     "gold_barrera_fragmento": "Cada barrera detectada en un relato, con la frase exacta que la sustenta.",
     "gold_catalogo_barreras": "Definición de cada categoría de barrera y las expresiones que se buscan.",
@@ -235,6 +262,8 @@ def construir_gold(config: dict, silencioso: bool = False) -> dict[str, pd.DataF
     print("1/5 Leyendo los relatos de los PDF por entidad...")
     crudos, extraccion = extraer_narrativas(config)
     fragmentos, barreras = clasificar_fragmentos(crudos)
+    fragmentos.insert(fragmentos.columns.get_loc("entidad_nombre") + 1, "entidad_nombre_sigla",
+                      fragmentos["entidad_codigo"].map(nombres_normalizados(config)).astype("string"))
     print("2/5 Preparando actividades y metas...")
     act = tabla_actividad_corte(config)
     meta = tabla_meta_corte(config, act, fragmentos, barreras)

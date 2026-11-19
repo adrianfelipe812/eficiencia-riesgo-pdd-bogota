@@ -22,6 +22,9 @@ rutas:
   # Se revisan con sus subcarpetas; el corte se lee de la portada de cada PDF.
   pdf_narrativas:
     - "data/raw"
+  # Tabla de normalización de entidades (nombre oficial con sigla, NIT, sector). De aquí sale
+  # data/silver/entidades/entidad.csv (scripts/normalizar_entidades.py).
+  normalizacion_entidades: "data/raw/Normalizacion_Entidades.xlsx"
   # Salida (dentro de este repositorio).
   gold: "data/gold"
 

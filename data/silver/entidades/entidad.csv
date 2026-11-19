@@ -1,0 +1,78 @@
+﻿entidad_codigo|entidad_nombre_sigla|entidad_nombre_oficial|entidad_sigla_oficial|codigo_sigep|codigo_hacienda|nit|digito_verificacion|sector_oficial
+|Entidad de Gestión Administrativa y Técnica en liquidación - EGAT|Entidad de Gestión Administrativa y Técnica en liquidación|EGAT|8273||901036590|8|Salud
+|Instituto Distrital de Ciencia, Biotecnología e Innovación en Salud - IDCBIS|Instituto Distrital de Ciencia, Biotecnología e Innovación en Salud|IDCBIS|8274||901034790|5|Salud
+|Operadora Distrital de Transporte S.A.S. - ODT|Operadora Distrital de Transporte S.A.S.|ODT|13228||901526664|7|Movilidad
+|Terminal de Transporte S.A.|Terminal de Transporte S.A.||6189||860052155|6|Movilidad
+0001|Fondo de Desarrollo Local de Usaquén|Fondo de Desarrollo Local de Usaquén||8329|1|899999061|9|Localidades
+0002|Fondo de Desarrollo Local de Chapinero|Fondo de Desarrollo Local de Chapinero||8330|2|899999061|9|Localidades
+0003|Fondo de Desarrollo Local de Santa Fe|Fondo de Desarrollo Local de Santa Fe||8331|3|899999061|9|Localidades
+0004|Fondo de Desarrollo Local de San Cristóbal|Fondo de Desarrollo Local de San Cristóbal||8332|4|899999061|9|Localidades
+0005|Fondo de Desarrollo Local de Usme|Fondo de Desarrollo Local de Usme||8333|5|899999061|9|Localidades
+0006|Fondo de Desarrollo Local de Tunjuelito|Fondo de Desarrollo Local de Tunjuelito||8334|6|899999061|9|Localidades
+0007|Fondo de Desarrollo Local de Bosa|Fondo de Desarrollo Local de Bosa||8335|7|899999061|9|Localidades
+0008|Fondo de Desarrollo Local de Kennedy|Fondo de Desarrollo Local de Kennedy||8336|8|899999061|9|Localidades
+0009|Fondo de Desarrollo Local de Fontibón|Fondo de Desarrollo Local de Fontibón||8337|9|899999061|9|Localidades
+0010|Fondo de Desarrollo Local de Engativá|Fondo de Desarrollo Local de Engativá||8338|10|899999061|9|Localidades
+0011|Fondo de Desarrollo Local de Suba|Fondo de Desarrollo Local de Suba||8339|11|899999061|9|Localidades
+0012|Fondo de Desarrollo Local de Barrios Unidos|Fondo de Desarrollo Local de Barrios Unidos||8340|12|899999061|9|Localidades
+0013|Fondo de Desarrollo Local de Teusaquillo|Fondo de Desarrollo Local de Teusaquillo||8341|13|899999061|9|Localidades
+0014|Fondo de Desarrollo Local de Los Mártires|Fondo de Desarrollo Local de Los Mártires||8342|14|899999061|9|Localidades
+0015|Fondo de Desarrollo Local de Antonio Nariño|Fondo de Desarrollo Local de Antonio Nariño||8343|15|899999061|9|Localidades
+0016|Fondo de Desarrollo Local de Puente Aranda|Fondo de Desarrollo Local de Puente Aranda||8344|16|899999061|9|Localidades
+0017|Fondo de Desarrollo Local de La Candelaria|Fondo de Desarrollo Local de La Candelaria||8345|17|899999061|9|Localidades
+0018|Fondo de Desarrollo Local de Rafael Uribe Uribe|Fondo de Desarrollo Local de Rafael Uribe Uribe||8346|18|899999061|9|Localidades
+0019|Fondo de Desarrollo Local de Ciudad Bolívar|Fondo de Desarrollo Local de Ciudad Bolívar||8347|19|899999061|9|Localidades
+0020|Fondo de Desarrollo Local de Sumapaz|Fondo de Desarrollo Local de Sumapaz||8348|20|899999061|9|Localidades
+0102|Personería de Bogotá D.C.|Personería de Bogotá D.C.||4891|102|899999061|9|Órganos de control
+0104|Secretaría General de la Alcaldía Mayor de Bogotá D.C.|Secretaría General de la Alcaldía Mayor de Bogotá D.C.||6132|104|899999061|9|Gestión Pública
+0105|Veeduría Distrital|Veeduría Distrital||6247|105|899999061|9|Órganos de control
+0110|Secretaría Distrital de Gobierno - SDG|Secretaría Distrital de Gobierno|SDG|6127|110|899999061|9|Gobierno
+0111|Secretaría Distrital de Hacienda - SDH|Secretaría Distrital de Hacienda|SDH|6123|111|899999061|9|Hacienda
+0112|Secretaría de Educación del Distrito - SED|Secretaría de Educación del Distrito|SED|6121|112|899999061|9|Educación
+0113|Secretaría Distrital de Movilidad - SDM|Secretaría Distrital de Movilidad|SDM|6124|113|899999061|9|Movilidad
+0114|Secretaría Distrital de Salud - SDS|Secretaría Distrital de Salud|SDS|6130|114|899999061|9|Salud
+0117|Secretaría Distrital de Desarrollo Económico - SDDE|Secretaría Distrital de Desarrollo Económico|SDDE|6126|117|899999061|9|Desarrollo Económico, Industria y Turismo
+0118|Secretaría Distrital del Hábitat - SDHT|Secretaría Distrital del Hábitat|SDHT|6131|118|899999061|9|Hábitat
+0119|Secretaría Distrital de Cultura, Recreación y Deporte - SCRD|Secretaría Distrital de Cultura, Recreación y Deporte|SCRD|6119|119|899999061|9|Cultura, Recreación y Deporte
+0120|Secretaría Distrital de Planeación - SDP|Secretaría Distrital de Planeación|SDP|6133|120|899999061|9|Planeación
+0121|Secretaría Distrital de la Mujer - SDMujer|Secretaría Distrital de la Mujer|SDMujer|8095|121|899999061|9|Mujeres
+0122|Secretaría Distrital de Integración Social - SDIS|Secretaría Distrital de Integración Social|SDIS|6128|122|899999061|9|Integración Social
+0125|Departamento Administrativo del Servicio Civil Distrital - DASCD|Departamento Administrativo del Servicio Civil Distrital|DASCD|2737|125|899999061|9|Gestión Pública
+0126|Secretaría Distrital de Ambiente - SDA|Secretaría Distrital de Ambiente|SDA|6125|126|899999061|9|Ambiente
+0127|Departamento Administrativo de la Defensoría del Espacio Público - DADEP|Departamento Administrativo de la Defensoría del Espacio Público|DADEP|2732|127|899999061|9|Gobierno
+0131|Unidad Administrativa Especial Cuerpo Oficial de Bomberos de Bogotá D.C. - UAECOB|Unidad Administrativa Especial Cuerpo Oficial de Bomberos de Bogotá D.C.|UAECOB|2730|131|899999061|9|Seguridad, Convivencia y Justicia
+0136|Secretaría Jurídica Distrital - SJD|Secretaría Jurídica Distrital|SJD|8101|136|899999061|9|Gestión Jurídica
+0137|Secretaría Distrital de Seguridad, Convivencia y Justicia - SDSCJ|Secretaría Distrital de Seguridad, Convivencia y Justicia|SDSCJ|8239|137|899999061|9|Seguridad, Convivencia y Justicia
+0200|Instituto para la Economía Social - IPES|Instituto para la Economía Social|IPES|4797|200|899999446|0|Desarrollo Económico, Industria y Turismo
+0201|Fondo Financiero Distrital de Salud - FFDS|Fondo Financiero Distrital de Salud|FFDS|4339|201|800246953|2|Salud
+0203|Instituto Distrital de Gestión de Riesgos y Cambio Climático - IDIGER|Instituto Distrital de Gestión de Riesgos y Cambio Climático|IDIGER|4300|203|800154275|1|Ambiente
+0204|Instituto de Desarrollo Urbano - IDU|Instituto de Desarrollo Urbano|IDU|4554|204|899999081|6|Movilidad
+0206|Fondo de Prestaciones Económicas, Cesantías y Pensiones - FONCEP|Fondo de Prestaciones Económicas, Cesantías y Pensiones|FONCEP|4308|206|860041163|8|Hacienda
+0208|Caja de la Vivienda Popular - CVP|Caja de la Vivienda Popular|CVP|1397|208|899999074|4|Hábitat
+0211|Instituto Distrital de Recreación y Deporte - IDRD|Instituto Distrital de Recreación y Deporte|IDRD|4640|211|860061099|1|Cultura, Recreación y Deporte
+0213|Instituto Distrital de Patrimonio Cultural - IDPC|Instituto Distrital de Patrimonio Cultural|IDPC|2637|213|860506170|7|Cultura, Recreación y Deporte
+0214|Instituto Distrital para la Protección de la Niñez y la Juventud - IDIPRON|Instituto Distrital para la Protección de la Niñez y la Juventud|IDIPRON|4803|214|899999333|7|Integración Social
+0215|Fundación Gilberto Alzate Avendaño - FUGA|Fundación Gilberto Alzate Avendaño|FUGA|4387|215|860044113|3|Cultura, Recreación y Deporte
+0216|Orquesta Filarmónica de Bogotá - OFB|Orquesta Filarmónica de Bogotá|OFB|4881|216|899999282|1|Cultura, Recreación y Deporte
+0218|Jardín Botánico de Bogotá José Celestino Mutis - JBB|Jardín Botánico de Bogotá José Celestino Mutis|JBB|4821|218|860030197|0|Ambiente
+0219|Instituto para la Investigación Educativa y el Desarrollo Pedagógico - IDEP|Instituto para la Investigación Educativa y el Desarrollo Pedagógico|IDEP|4801|219|830007738|1|Educación
+0220|Instituto Distrital de la Participación y Acción Comunal - IDPAC|Instituto Distrital de la Participación y Acción Comunal|IDPAC|4639|220|900127054|9|Gobierno
+0221|Instituto Distrital de Turismo - IDT|Instituto Distrital de Turismo|IDT|4642|221|900140515|6|Desarrollo Económico, Industria y Turismo
+0222|Instituto Distrital de las Artes - IDARTES|Instituto Distrital de las Artes|IDARTES|8049|222|900413030|9|Cultura, Recreación y Deporte
+0226|Unidad Administrativa Especial de Catastro Distrital - UAECD|Unidad Administrativa Especial de Catastro Distrital|UAECD|6216|226|900127768|9|Hacienda
+0227|Unidad Administrativa Especial de Rehabilitación y Mantenimiento Vial - UAERMV|Unidad Administrativa Especial de Rehabilitación y Mantenimiento Vial|UAERMV|6217|227|900127032|7|Movilidad
+0228|Unidad Administrativa Especial de Servicios Públicos - UAESP|Unidad Administrativa Especial de Servicios Públicos|UAESP|6218|228|900126860|4|Hábitat
+0229|Instituto Distrital de Protección y Bienestar Animal - IDPYBA|Instituto Distrital de Protección y Bienestar Animal|IDPYBA|2841|229|901097324|6|Ambiente
+0230|Universidad Distrital Francisco José de Caldas - UDFJC|Universidad Distrital Francisco José de Caldas|UDFJC||230|899999230|7|Educación
+0235|Contraloría de Bogotá D.C.|Contraloría de Bogotá D.C.||2638|235|800245133|5|Órganos de control
+0240|Lotería de Bogotá|Lotería de Bogotá||4848|240|899999270|1|Hacienda
+0260|Canal Capital|Canal Capital||1401|260|830012587|4|Cultura, Recreación y Deporte
+0262|Empresa de Transporte del Tercer Milenio - TransMilenio S.A. - TMSA|Empresa de Transporte del Tercer Milenio - TransMilenio S.A.|TMSA|4212|262|830063506|6|Movilidad
+0263|Empresa de Renovación y Desarrollo Urbano de Bogotá D.C. - RenoBo|Empresa de Renovación y Desarrollo Urbano de Bogotá D.C.|RenoBo|4193|263|830144890|8|Hábitat
+0265|Empresa de Acueducto y Alcantarillado de Bogotá - EAAB-ESP|Empresa de Acueducto y Alcantarillado de Bogotá - ESP|EAAB-ESP||265|899999094|1|Hábitat
+0266|Empresa Metro de Bogotá S.A. - EMB|Empresa Metro de Bogotá S.A.|EMB|8243|266|901038962|3|Movilidad
+0423|Subred Integrada de Servicios de Salud Centro Oriente E.S.E.|Subred Integrada de Servicios de Salud Centro Oriente E.S.E.||8183|423|900959051|7|Salud
+0424|Subred Integrada de Servicios de Salud Sur Occidente E.S.E.|Subred Integrada de Servicios de Salud Sur Occidente E.S.E.||8181|424|900959048|4|Salud
+0425|Subred Integrada de Servicios de Salud Sur E.S.E.|Subred Integrada de Servicios de Salud Sur E.S.E.||8180|425|900958564|9|Salud
+0426|Subred Integrada de Servicios de Salud Norte E.S.E.|Subred Integrada de Servicios de Salud Norte E.S.E.||8182|426|900971006|4|Salud
+0501|Agencia Distrital para la Educación Superior, la Ciencia y la Tecnología - ATENEA|Agencia Distrital para la Educación Superior, la Ciencia y la Tecnología|ATENEA|8545|501|901508361|4|Educación

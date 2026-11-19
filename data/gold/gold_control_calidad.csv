@@ -11,6 +11,9 @@ Narrativa: relatos cuya entidad y meta existen en Gestión-Inversión (%)|100.0|
 Narrativa: relatos cuyo indicador pertenece a esa meta según Avance del Plan (%)|100.0|100.0|Sí
 Narrativa: rótulos del PDF = relatos con texto + celdas vacías|4120|4120|Sí
 Narrativa: identificadores de relato sin repetir|0|0|Sí
+Entidades: actividades con nombre normalizado (%)|100.0|100.0|Sí
+Entidades: relatos con nombre normalizado (%)|100.0|100.0|Sí
+Actividades: la serie por año coincide con lo programado y entregado del año reportado|True|True|Sí
 Tiempo: el corte siguiente siempre es posterior|True|True|Sí
 Tiempo: el último corte no tiene dato del futuro|0|0|Sí
 DEA: toda eficiencia está entre 0 y 1|True|True|Sí
