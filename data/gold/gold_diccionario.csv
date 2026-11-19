@@ -50,6 +50,7 @@ gold_actividad_corte|sector_nombre|Nombre del sector.|texto|Gestión-Inversión 
 gold_actividad_corte|entidad_codigo|Código de la entidad responsable.|código|Gestión-Inversión (SDP)
 gold_actividad_corte|entidad_sigla|Sigla de la entidad.|texto|Gestión-Inversión (SDP)
 gold_actividad_corte|entidad_nombre|Nombre de la entidad.|texto|Gestión-Inversión (SDP)
+gold_actividad_corte|entidad_nombre_sigla|Nombre normalizado de la entidad, con su sigla (Normalizacion_Entidades.xlsx). Es el que muestra el tablero.|texto|Calculado
 gold_actividad_corte|objetivo_codigo|Código del objetivo estratégico.|código|Gestión-Inversión (SDP)
 gold_actividad_corte|programa_codigo|Código del programa.|código|Gestión-Inversión (SDP)
 gold_actividad_corte|meta_producto_codigo|Meta producto a la que aporta la actividad.|código|Gestión-Inversión (SDP)
@@ -73,10 +74,24 @@ gold_actividad_corte|pct_fisico_total_entregado|Porcentaje de entrega frente al 
 gold_actividad_corte|recursos_total_programados_constantes|Recursos programados del cuatrienio a precios constantes (comparables entre años).|millones de pesos constantes|Gestión-Inversión (SDP)
 gold_actividad_corte|recursos_total_girados_constantes|Giros acumulados a precios constantes.|millones de pesos constantes|Gestión-Inversión (SDP)
 gold_actividad_corte|entrega_cero_con_programacion|Verdadero si la actividad tenía programación positiva para el año y su entrega al corte es cero.|sí/no|Calculado
+gold_actividad_corte|fisico_programado_2024|Magnitud física programada para 2024, según el corte (incluye reprogramaciones).|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|fisico_entregado_2024|Magnitud física entregada en 2024, según el corte (0 o vacío si el año aún no empieza).|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|pct_fisico_entregado_2024|Avance de la vigencia 2024: porcentaje de entrega del año, tal como lo publica la fuente.|%|Gestión-Inversión (SDP)
+gold_actividad_corte|fisico_programado_2025|Magnitud física programada para 2025, según el corte (incluye reprogramaciones).|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|fisico_entregado_2025|Magnitud física entregada en 2025, según el corte (0 o vacío si el año aún no empieza).|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|pct_fisico_entregado_2025|Avance de la vigencia 2025: porcentaje de entrega del año, tal como lo publica la fuente.|%|Gestión-Inversión (SDP)
+gold_actividad_corte|fisico_programado_2026|Magnitud física programada para 2026, según el corte (incluye reprogramaciones).|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|fisico_entregado_2026|Magnitud física entregada en 2026, según el corte (0 o vacío si el año aún no empieza).|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|pct_fisico_entregado_2026|Avance de la vigencia 2026: porcentaje de entrega del año, tal como lo publica la fuente.|%|Gestión-Inversión (SDP)
+gold_actividad_corte|fisico_programado_2027|Magnitud física programada para 2027, según el corte (incluye reprogramaciones).|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|fisico_entregado_2027|Magnitud física entregada en 2027, según el corte (0 o vacío si el año aún no empieza).|unidad propia de la actividad|Gestión-Inversión (SDP)
+gold_actividad_corte|pct_fisico_entregado_2027|Avance de la vigencia 2027: porcentaje de entrega del año, tal como lo publica la fuente.|%|Gestión-Inversión (SDP)
+gold_actividad_corte|recursos_comprometidos_vigencias_futuras|Recursos ya comprometidos para años posteriores al reportado (vigencias futuras).|millones de pesos corrientes|Gestión-Inversión (SDP)
 gold_narrativa_fragmento|fragmento_id|Identificador estable del relato: corte-entidad-meta-indicador-campo (R = retrasos, A = avances).|código|Calculado
 gold_narrativa_fragmento|fecha_corte|Corte del reporte, leído de la portada del PDF.|fecha|PDF Gestión-Inversión por entidad
 gold_narrativa_fragmento|entidad_codigo|Entidad que escribió el relato.|código|PDF Gestión-Inversión por entidad
 gold_narrativa_fragmento|entidad_nombre|Nombre de la entidad, como aparece en el PDF.|texto|PDF Gestión-Inversión por entidad
+gold_narrativa_fragmento|entidad_nombre_sigla|Nombre normalizado de la entidad, con su sigla (Normalizacion_Entidades.xlsx). Es el que muestra el tablero.|texto|Calculado
 gold_narrativa_fragmento|meta_producto_codigo|Meta producto a la que se refiere el relato.|código|PDF Gestión-Inversión por entidad
 gold_narrativa_fragmento|indicador_codigo|Indicador bajo el cual aparece el relato.|código|PDF Gestión-Inversión por entidad
 gold_narrativa_fragmento|indicador_nombre|Nombre del indicador.|texto|PDF Gestión-Inversión por entidad

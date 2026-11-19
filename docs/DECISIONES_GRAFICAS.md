@@ -48,3 +48,18 @@ Sobre el color: el naranja se eligió como único acento por ser neutro (no sugi
 - Las gráficas de evolución advierten que el avance y el dinero vuelven a empezar cada enero, para que la caída no se lea como retroceso.
 - La gráfica 7 declara que muestra una asociación y no una causa.
 - La anotación de cada gráfica se limita a hechos calculables con los datos.
+
+## Actualización del 19 de noviembre de 2026: diseño Foco PDD
+
+El tablero pasó al diseño «Foco PDD» y se ajustó con las observaciones del equipo (ver [TABLERO.md](TABLERO.md)). Lo anterior describe el tablero previo; estas decisiones lo reemplazan donde se contradicen:
+
+| Decisión anterior | Decisión actual | Por qué |
+|---|---|---|
+| Naranja como único acento | Rojo institucional de la Veeduría para lo que sustenta el título (rezagadas, alertas) | Coherencia con la identidad de la entidad que usará el tablero |
+| Etiquetado directo, sin leyendas | Leyenda corta, abajo y centrada, en cada gráfica | Pedido del equipo: el título y la marca quedan libres y la leyenda se lee siempre en el mismo lugar |
+| Se evita el par rojo–verde | Semáforo verde / ámbar / rojo en las tarjetas del detalle y en la gráfica de actividades | Es la convención que esperan los usuarios del seguimiento. Para no depender solo del color, cada tarjeta muestra el número, y la leyenda dice el umbral de cada color |
+| Gráficas de sector/entidad y de barreras en el Panorama (4, 6 y 7) | El Panorama muestra distribución de avance, avance frente a dinero y evolución del alcance; sectores y entidades se filtran desde el encabezado | El diseño Foco PDD prioriza la bandeja de metas y el detalle operativo |
+| Gráfica 3 con dos paneles lado a lado | Dos gráficas apiladas, cada una a todo el ancho | En el panel de detalle, lado a lado quedaban muy pequeñas |
+| Altura fija de cada gráfica | Cada gráfica llena su celda (se estira el área de trazado, no el texto) | Evitar espacios vacíos cuando la tarjeta vecina es más alta |
+
+Se mantienen: títulos activos, escalas desde cero y de 0 a 100, un solo eje por gráfica, fuente y corte en cada gráfica y la advertencia de que avance y dinero se reinician cada enero.

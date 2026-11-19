@@ -117,12 +117,12 @@ Todas están en `data/gold/`, en CSV y reunidas en el libro `gold_pdd.xlsx` (una
 | Tabla | Una fila es... | Filas | Para qué sirve |
 |---|---|---|---|
 | `gold_meta_corte` | Una meta producto en un corte | 3.825 | Tabla principal: insumos y productos para DEA, y panel para el modelo predictivo |
-| `gold_actividad_corte` | Una actividad en un corte | 13.089 | Detalle de qué actividades explican el resultado de la meta |
+| `gold_actividad_corte` | Una actividad en un corte | 13.089 | Detalle de qué actividades explican el resultado de la meta, con su avance año por año del Plan |
 | `gold_narrativa_fragmento` | Un relato leído del PDF | 3.991 | Consultar el texto original y su clasificación |
 | `gold_barrera_fragmento` | Una barrera encontrada en un relato | 373 | Ver la frase que sustenta cada barrera |
 | `gold_catalogo_barreras` | Una categoría | 7 | Definición y expresiones buscadas |
-| `gold_diccionario` | Una columna | 105 | Significado, unidad y origen de cada dato |
-| `gold_control_calidad` | Una comprobación | 16 | Verificar que la construcción no alteró los datos |
+| `gold_diccionario` | Una columna | 120 | Significado, unidad y origen de cada dato |
+| `gold_control_calidad` | Una comprobación | 19 | Verificar que la construcción no alteró los datos |
 | `gold_auditoria_extraccion` | Un PDF | 4 | Rótulos encontrados, relatos obtenidos y celdas vacías |
 | `gold_auditoria_nlp_resumen` | Una medida de acierto | 20 | Precisión y sensibilidad del clasificador |
 | `gold_auditoria_nlp` | Un relato leído por una persona | 180 | Comparación uno a uno con el clasificador |
@@ -150,6 +150,14 @@ Todas están en `data/gold/`, en CSV y reunidas en el libro `gold_pdd.xlsx` (una
 | `eficiencia_dea` | Eficiencia relativa frente a metas comparables (0 a 1) |
 | `avance_vigencia_siguiente` | El avance que la meta mostró en el corte siguiente |
 | `riesgo_relativo_siguiente` | Variable que el modelo anticipa (ver sección 6) |
+
+### Entidades normalizadas
+
+Los nombres de las entidades se normalizan con `data/raw/Normalizacion_Entidades.xlsx` (nombre oficial con sigla, NIT, códigos SIGEP y de Hacienda, sector). `scripts/normalizar_entidades.py` lo lleva a Silver (`data/silver/entidades/entidad.csv`), cruzando por el código de Hacienda, que es el mismo `entidad_codigo` de Gestión-Inversión con cuatro dígitos. Gold agrega `entidad_nombre_sigla` en `gold_actividad_corte` y `gold_narrativa_fragmento`, y es el nombre que muestra el tablero. Si una entidad nueva no está en el Excel, el script lo avisa: hay que agregarla con su código de Hacienda.
+
+### Avance año por año en `gold_actividad_corte`
+
+Cada actividad trae, además del año reportado, su avance en cada año del Plan tal como lo informa el corte (bloques VIG1 a VIG4 de Gestión-Inversión): `fisico_programado_<año>`, `fisico_entregado_<año>` y `pct_fisico_entregado_<año>`, para 2024 a 2027. Es la tabla «Año / Programación / Ejecución vigencia / Avance de la vigencia» de los reportes de la SDP y alimenta la gráfica que aparece al pasar el cursor en la sección de actividades del tablero. La columna del año reportado repite `fisico_programado` y `fisico_entregado` (un control de calidad lo verifica). `recursos_comprometidos_vigencias_futuras` suma lo ya comprometido para años posteriores al reportado.
 
 El detalle de las demás columnas está en `gold_diccionario`.
 

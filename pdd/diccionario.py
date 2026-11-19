@@ -68,6 +68,7 @@ DICCIONARIO = [
     (A, "entidad_codigo", "Código de la entidad responsable.", "código", GI),
     (A, "entidad_sigla", "Sigla de la entidad.", "texto", GI),
     (A, "entidad_nombre", "Nombre de la entidad.", "texto", GI),
+    (A, "entidad_nombre_sigla", "Nombre normalizado de la entidad, con su sigla (Normalizacion_Entidades.xlsx). Es el que muestra el tablero.", "texto", CALC),
     (A, "objetivo_codigo", "Código del objetivo estratégico.", "código", GI),
     (A, "programa_codigo", "Código del programa.", "código", GI),
     (A, "meta_producto_codigo", "Meta producto a la que aporta la actividad.", "código", GI),
@@ -91,11 +92,19 @@ DICCIONARIO = [
     (A, "recursos_total_programados_constantes", "Recursos programados del cuatrienio a precios constantes (comparables entre años).", "millones de pesos constantes", GI),
     (A, "recursos_total_girados_constantes", "Giros acumulados a precios constantes.", "millones de pesos constantes", GI),
     (A, "entrega_cero_con_programacion", "Verdadero si la actividad tenía programación positiva para el año y su entrega al corte es cero.", "sí/no", CALC),
+    # Avance año por año del Plan (bloques VIG1..VIG4 de Gestión-Inversión). La columna del año del
+    # corte repite fisico_programado / fisico_entregado / pct_fisico_entregado.
+    *[fila for anio in (2024, 2025, 2026, 2027) for fila in [
+        (A, f"fisico_programado_{anio}", f"Magnitud física programada para {anio}, según el corte (incluye reprogramaciones).", "unidad propia de la actividad", GI),
+        (A, f"fisico_entregado_{anio}", f"Magnitud física entregada en {anio}, según el corte (0 o vacío si el año aún no empieza).", "unidad propia de la actividad", GI),
+        (A, f"pct_fisico_entregado_{anio}", f"Avance de la vigencia {anio}: porcentaje de entrega del año, tal como lo publica la fuente.", "%", GI)]],
+    (A, "recursos_comprometidos_vigencias_futuras", "Recursos ya comprometidos para años posteriores al reportado (vigencias futuras).", MILL, GI),
     # ---------------- gold_narrativa_fragmento ----------------
     (F, "fragmento_id", "Identificador estable del relato: corte-entidad-meta-indicador-campo (R = retrasos, A = avances).", "código", CALC),
     (F, "fecha_corte", "Corte del reporte, leído de la portada del PDF.", "fecha", PDF),
     (F, "entidad_codigo", "Entidad que escribió el relato.", "código", PDF),
     (F, "entidad_nombre", "Nombre de la entidad, como aparece en el PDF.", "texto", PDF),
+    (F, "entidad_nombre_sigla", "Nombre normalizado de la entidad, con su sigla (Normalizacion_Entidades.xlsx). Es el que muestra el tablero.", "texto", CALC),
     (F, "meta_producto_codigo", "Meta producto a la que se refiere el relato.", "código", PDF),
     (F, "indicador_codigo", "Indicador bajo el cual aparece el relato.", "código", PDF),
     (F, "indicador_nombre", "Nombre del indicador.", "texto", PDF),

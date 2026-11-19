@@ -18,13 +18,15 @@ El anteproyecto está en `Ante-proyecto-final.pdf`.
 | [docs/RESULTADOS.md](docs/RESULTADOS.md) | Qué se encontró en eficiencia, barreras y modelo predictivo |
 | [docs/GUIA_GOLD_Y_NLP.md](docs/GUIA_GOLD_Y_NLP.md) | Qué contiene cada tabla y cómo se lee el texto de los reportes |
 | [docs/AUDITORIA.md](docs/AUDITORIA.md) | Cómo se verificó que los datos y la clasificación son confiables |
+| [docs/TABLERO.md](docs/TABLERO.md) | Cómo se usa el tablero, qué reglas aplica y cómo se reconstruye |
 | [docs/DECISIONES_GRAFICAS.md](docs/DECISIONES_GRAFICAS.md) | Por qué cada gráfica del tablero es como es |
 | [docs/ACUERDOS_CON_LA_ENTIDAD.md](docs/ACUERDOS_CON_LA_ENTIDAD.md) | Decisiones que hay que acordar con quienes usarán las alertas, con espacio para registrarlas |
-| [docs/MEJORAS.md](docs/MEJORAS.md) | Qué se ha mejorado y qué falta |
+| [docs/MEJORAS.md](docs/MEJORAS.md) | Qué se ha mejorado y qué falta (incluye la bitácora de actualizaciones) |
+| [docs/Ajustes_para_el_proyecto_Foco_PDD.docx](docs/Ajustes_para_el_proyecto_Foco_PDD.docx) | Ajustes al tablero solicitados por el equipo |
 
 Las tablas están en `data/gold/` (CSV) y reunidas en `data/gold/gold_pdd.xlsx`.
 
-El tablero para consultar los resultados es `tablero/index.html`: se abre con doble clic y funciona sin conexión.
+El tablero para consultar los resultados es `tablero/index.html`: se abre con doble clic y funciona sin conexión. Tiene modo oscuro: el botón con la luna, a la izquierda de «Fecha de corte», lo activa y lo desactiva, y el navegador recuerda la elección. También se puede usar desde el celular (Android e iOS): el menú pasa a una barra inferior, las tablas se muestran como tarjetas y la gráfica de cada actividad se abre al tocar la fila. En la barra lateral se pueden descargar los archivos originales de la SDP de cada corte (informe por entidad en PDF, Avance del Plan y Gestión-Inversión en Excel); esos botones enlazan a `data/raw/`, así que funcionan al abrir el tablero dentro de la carpeta del repositorio.
 
 ## Cómo reproducir los resultados
 
@@ -50,7 +52,7 @@ En Linux o macOS, use `.venv/bin/python` en lugar de `.venv\Scripts\python`. Qui
 .venv\Scripts\python scripts/reproducir.py
 ```
 
-Tarda unos minutos y termina con `REPRODUCIDO: todo coincide. si:
+Tarda unos minutos y termina con `REPRODUCIDO: todo coincide.` si:
 
 - los datos de entrada son exactamente los registrados en `data/FUENTES.csv`;
 - las 9 pruebas automáticas pasan;
@@ -64,9 +66,11 @@ Este procedimiento se probó en una copia limpia del repositorio, con un entorno
 
 | Comando | Qué hace |
 |---|---|
+| `python scripts/normalizar_entidades.py` | Normaliza las entidades en Silver a partir de `data/raw/Normalizacion_Entidades.xlsx` (antes de construir Gold) |
 | `python scripts/construir_gold.py` | Regenera las tablas de `data/gold/` (sobrescribe las publicadas) |
 | `python scripts/auditar_gold.py` | Compara las tablas con los archivos originales de la SDP |
 | `python -m pytest -q` | Ejecuta las pruebas automáticas |
+| `python scripts/construir_plantilla.py` | Reconstruye el diseño del tablero (`tablero/plantilla_foco.html`) aplicando los ajustes `scripts/ajustar_*.py` al diseño original |
 | `python scripts/generar_tablero.py` | Regenera `tablero/index.html` a partir de las tablas de `data/gold/` |
 | `python scripts/actualizar_todo.py <carpeta data del scraper>` | Cuando hay un corte nuevo: trae los datos, reconstruye las tablas, regenera el tablero y audita |
 
@@ -95,18 +99,25 @@ Para trabajar con una descarga más reciente, copie `configs/pdd.local.ejemplo.y
 - La relación entre barreras y menor eficiencia es una asociación, no una causa.
 - Probado en Windows con Python 3.14.3.
 
+## Pendiente por validar
+
+**Alerta en metas sin recursos comprometidos.** El tablero no muestra alerta ni puntaje de riesgo para una meta que, en el último corte, tiene 0 % comprometido (o sin dato) y no tiene compromisos en vigencias futuras: si no se comprometió nada, no hay compromiso que vigilar. La regla se aplica al generar el tablero (`scripts/generar_tablero.py`); Gold y el modelo no cambian. En el corte del 30/09/2026 afecta a 15 metas (las alertas altas pasan de 52 a 42) y ninguna meta registra compromisos en vigencias futuras.
+
+Falta decidir qué hacer con las 5 de esas metas que **sí tienen recursos programados para el año pero no comprometieron nada**: 2023, 2065, 2150, 2216 y 2218 (esta última con cerca de 48.000 millones programados). Hoy quedan sin alerta como las demás, pero que no se haya comprometido dinero programado podría ser justamente una señal de alerta. Las otras 10 no tenían recursos programados en el año.
+
 ## Estructura
 
 ```text
 configs/      pdd.yaml (parámetros), barreras.yaml (expresiones de cada barrera)
 pdd/          código: lectura de PDF, barreras, DEA, modelo, tablas Gold, auditoría
-scripts/      reproducir.py, construir_gold.py y auditar_gold.py
+scripts/      reproducir.py, construir_gold.py, auditar_gold.py, normalizar_entidades.py, generar_tablero.py,
+              construir_plantilla.py y los ajustes de diseño del tablero (ajustar_*.py)
 auditoria/    relatos leídos por una persona para medir el acierto del clasificador
-data/silver/  datos de entrada consolidados por el scraper
-data/raw/     archivos originales de la SDP (PDF por entidad y Excel del último corte)
+data/silver/  datos de entrada consolidados por el scraper, más las entidades normalizadas (entidades/)
+data/raw/     archivos originales de la SDP (PDF por entidad y Excel de los últimos cortes) y Normalizacion_Entidades.xlsx
 data/gold/    tablas resultantes
-tablero/      tablero HTML (index.html) y sus piezas: plantilla, estilos y programa
-docs/         documentación para lectores no técnicos
+tablero/      index.html (tablero final), plantilla_foco.html (diseño con ajustes) y plantilla_foco_base.html (diseño original)
+docs/         documentación para lectores no técnicos (incluye TABLERO.md)
 tests/        pruebas automáticas
 ```
 

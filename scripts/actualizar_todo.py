@@ -9,9 +9,10 @@ están en el repositorio.
 
 Pasos:
   1. Trae los datos nuevos y actualiza data/FUENTES.csv   (actualizar_insumos.py)
-  2. Reconstruye las tablas de data/gold/                 (construir_gold.py)
-  3. Regenera el tablero tablero/index.html               (generar_tablero.py)
-  4. Audita las tablas contra los archivos originales     (auditar_gold.py)
+  2. Normaliza las entidades en Silver                    (normalizar_entidades.py)
+  3. Reconstruye las tablas de data/gold/                 (construir_gold.py)
+  4. Regenera el tablero tablero/index.html               (generar_tablero.py)
+  5. Audita las tablas contra los archivos originales     (auditar_gold.py)
 
 Al terminar, revise docs/RESULTADOS.md: sus cifras se escriben a mano y hay que
 actualizarlas con las de las tablas nuevas.
@@ -23,7 +24,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[1]
 
 if __name__ == "__main__":
-    pasos = [["scripts/construir_gold.py"], ["scripts/generar_tablero.py"], ["scripts/auditar_gold.py"]]
+    pasos = [["scripts/normalizar_entidades.py"], ["scripts/construir_gold.py"], ["scripts/generar_tablero.py"], ["scripts/auditar_gold.py"]]
     if len(sys.argv) > 1:
         pasos.insert(0, ["scripts/actualizar_insumos.py", sys.argv[1]])
     for paso in pasos:

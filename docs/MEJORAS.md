@@ -11,7 +11,7 @@ Bitácora del proyecto, escrita para quien conoce de indicadores pero no program
 | Capa Gold | No existía | 20 tablas en CSV y un libro de Excel |
 | Texto de los reportes | No se usaba | 3.991 relatos leídos de 4 PDF, cada uno con su página |
 | Barreras | No existían | 6 categorías, con la frase que sustenta cada una |
-| Verificación | Ninguna | 16 controles automáticos, auditoría contra los archivos originales y una medición del acierto con 180 relatos leídos |
+| Verificación | Ninguna | 19 controles automáticos, auditoría contra los archivos originales y una medición del acierto con 180 relatos leídos |
 | Documentación para no programadores | Ninguna | Guía, informe de auditoría y diccionario de 96 columnas |
 
 ## 2. Mejoras, una por una
@@ -115,6 +115,26 @@ Durante este trabajo se detectaron y corrigieron tres errores propios antes de r
 
 Al implementarlo se encontró y corrigió un efecto indeseado: la regresión isotónica crea empates que bajaban el PR-AUC de algunos conjuntos y hacían parecer verificable el aporte de DEA y texto. La capacidad de ordenar ahora se mide con las probabilidades sin calibrar, y la conclusión de H1 no cambia.
 
+## 4d. Actualización del 19 de noviembre de 2026: nuevo tablero y ajustes del equipo
+
+El tablero adopta el diseño «Foco PDD» (Veeduría Distrital) y se ajusta con las observaciones del equipo (documento [Ajustes_para_el_proyecto_Foco_PDD.docx](Ajustes_para_el_proyecto_Foco_PDD.docx) y revisiones posteriores). Detalle de uso y construcción en [TABLERO.md](TABLERO.md).
+
+| Tema | Cambio |
+|---|---|
+| Diseño | `tablero/index.html` usa el diseño Foco PDD con los datos Gold. El diseño original quedó en `tablero/plantilla_foco_base.html` y los ajustes en `scripts/ajustar_*.py`, que `scripts/construir_plantilla.py` aplica en orden |
+| Encabezado | Título y filtros en un recuadro fijo; fecha de corte visible; filtros reducidos a sector, entidad y meta |
+| Panorama | Tarjetas: metas, % programado, % girado, % comprometido, rezagadas y alerta alta (promedios simples por meta; giros validados contra Gold) |
+| Gráficas | Leyendas abajo y centradas; cada gráfica llena su celda; la franja gris sigue al año del corte |
+| Bandeja de metas | Títulos de columna completos y fijos al bajar; «Eficiencia» se reemplaza por «Girado» |
+| Detalle de la meta | Seis tarjetas con semáforo frente a lo esperado al corte; cabecera fija; relatos antes que gráficas; se quitan eficiencia, dinero vs. avance, riesgo y «Por qué este riesgo» |
+| Actividades | Gráfica del avance de vigencia año por año del Plan al pasar el cursor; encabezado fijo |
+| Regla de alerta | Las metas sin recursos comprometidos (ni en vigencias futuras) no llevan alerta; queda pendiente decidir el caso de las que sí tenían recursos programados |
+| Entidades | Normalización con `data/raw/Normalizacion_Entidades.xlsx` (se completaron la Universidad Distrital y la EAAB); nueva tabla Silver `data/silver/entidades/entidad.csv` y columna `entidad_nombre_sigla` en Gold |
+| Gold | `gold_actividad_corte` suma el avance físico de cada año del Plan (`fisico_*_<año>`) y los compromisos en vigencias futuras; dos controles nuevos de entidades y uno de la serie por año (19 en total) |
+| Descargas | Archivos originales de la SDP por corte desde la barra lateral |
+| Accesibilidad | Modo oscuro activable y uso cómodo en celular (Android e iOS) |
+| Limpieza | Se retiraron el tablero anterior (`app.js`, `estilos*.css`, `graficas.js`, `plantilla.html`) y los borradores de diseño |
+
 ## 5. Qué falta frente al anteproyecto
 
 | Objetivo | Estado |
@@ -129,6 +149,7 @@ Al implementarlo se encontró y corrigió un efecto indeseado: la regresión iso
 | Qué | Dónde |
 |---|---|
 | Tablas | `data/gold/` y `data/gold/gold_pdd.xlsx` |
+| Uso y construcción del tablero | `docs/TABLERO.md` |
 | Resultados de eficiencia, barreras y modelo | `docs/RESULTADOS.md` |
 | Explicación de tablas y método | `docs/GUIA_GOLD_Y_NLP.md` |
 | Medición del acierto, en detalle | `docs/AUDITORIA.md` |

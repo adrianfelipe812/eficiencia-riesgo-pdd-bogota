@@ -1,4 +1,5 @@
 ﻿archivo;descripcion;bytes;sha256;url_origen;fecha_publicacion;fecha_descarga
+data/raw/Normalizacion_Entidades.xlsx;"Tabla de normalización de entidades (nombre con sigla, NIT, sector); se completaron la Universidad Distrital y la EAAB";9457;2774316d1ba44bb8d920fae49514a2a406c6c9495f2c4e80bd58be033cf2489f;;;
 data/raw/avance_plan/2026/2026-06-30/01_avancefisico20260630.xlsx;Archivo original de la SDP;153977;c7464dc5bfdbc96d5bd39340c4b0958d38b4394727670cf4bfd54719cae543a0;https://www.sdp.gov.co/sites/default/files/01_avancefisico20260630.xlsx;Mié, 29/07/2026;2026-09-04T20:41:55-05:00
 data/raw/avance_plan/2026/2026-09-30/01_avancefisico20260930.xlsx;Archivo original de la SDP;154239;53f24653b4f5c755cc4987e4d1701f72127d77f8eee543f26d9317383baaf241;https://www.sdp.gov.co/sites/default/files/01_avancefisico20260930.xlsx;Vie, 30/10/2026;2026-11-11T16:15:19-05:00
 data/raw/gestion_inversion/2024/2024-09-30/componentegestioninversionbcs20240930.pdf;Archivo original de la SDP;5475842;fbd19d95953ddfe32814d60b6575a8cb83fb765a26c73787c9772eb8c95592f3;https://www.sdp.gov.co/sites/default/files/componentegestioninversionbcs20240930.pdf;Mar, 31/12/2024;2026-09-04T20:42:30-05:00
@@ -9,4 +10,5 @@ data/raw/gestion_inversion/2026/2026-06-30/planacciongestioninversion20260630_ve
 data/raw/gestion_inversion/2026/2026-09-30/planacciongestioninversion20260930_ver20261027.xlsx;Archivo original de la SDP;1581074;69a55fa4db28efab4e51f1ea0c7fd7780f693fbb7791013b0c9f75998902c9aa;https://www.sdp.gov.co/sites/default/files/planacciongestioninversion20260930_ver20261027.xlsx;Mar, 27/10/2026;2026-11-11T16:15:28-05:00
 data/silver/avance_plan/indicador.csv;Avance por indicador, 8 cortes (consolidado del scraper);1787548;a5b4934f01bdbf03222d1bf231dda51ab778b8ac72d1c244423106f3d500efaa;;;
 data/silver/avance_plan/meta_producto.csv;Avance físico oficial por meta producto, 8 cortes (consolidado del scraper);2298888;263999d29f1754924017d5dcacb8a81c5fbbda9173d2ee11de978950f2c97f2e;;;
+data/silver/entidades/entidad.csv;Entidades normalizadas (Silver), generada con scripts/normalizar_entidades.py;10702;844871c904ae9da31fd95f1f57f032c17ee11fa94b5ebcc70f6799d2d8373eb4;;;
 data/silver/gestion_inversion/gestion_inversion.csv;Actividades, magnitudes y recursos, 7 cortes (consolidado del scraper);17965193;0809bf031bb50d4d60d29bc2d3bd1e7ef8f30267ac6462213739d0c98b9ff005;;;
