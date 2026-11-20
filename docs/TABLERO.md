@@ -87,3 +87,9 @@ python scripts/generar_tablero.py
 ```
 
 Los datos del tablero salen solo de Gold: `gold_meta_corte`, `gold_actividad_corte` (incluye el avance año por año y los compromisos en vigencias futuras), `gold_narrativa_fragmento`, `gold_barrera_fragmento`, `gold_prediccion_riesgo`, `gold_catalogo_barreras` y `gold_auditoria_nlp_resumen`. La lista de archivos descargables sale de `data/FUENTES.csv`.
+
+## 4. Cómo se comprueba
+
+`python scripts/validar_muestra.py` compara una muestra de metas y actividades del tablero con los Excel originales de la SDP del último corte (detalle en [AUDITORIA.md](AUDITORIA.md), sección 5b). `python scripts/reproducir.py` verifica, además, que el tablero publicado es el que resulta de las tablas Gold.
+
+**De dónde sale cada porcentaje.** El avance físico de las metas (avance de vigencia, transcurrido y cuatrienio) es el oficial de Avance del Plan. El dinero (% comprometido y % girado de la meta) y todo lo de las actividades sale de Gestión-Inversión: el porcentaje de cada meta es la suma de lo comprometido (o girado) de sus actividades dividida entre la suma de lo programado del año. Al filtrar por sector o entidad entran las metas con al menos una actividad de ese sector o entidad, pero cada meta conserva su valor completo (todas sus entidades); la sección de actividades sí muestra solo las de ese sector o entidad.

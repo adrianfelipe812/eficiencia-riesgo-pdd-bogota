@@ -135,6 +135,10 @@ El tablero adopta el diseño «Foco PDD» (Veeduría Distrital) y se ajusta con 
 | Accesibilidad | Modo oscuro activable y uso cómodo en celular (Android e iOS) |
 | Limpieza | Se retiraron el tablero anterior (`app.js`, `estilos*.css`, `graficas.js`, `plantilla.html`) y los borradores de diseño |
 
+## 4e. Validación del tablero del 19 de noviembre de 2026
+
+Se agregó `scripts/validar_muestra.py`, que compara una muestra al azar de metas y actividades del tablero con los Excel originales de la SDP del último corte (ver [AUDITORIA.md](AUDITORIA.md), sección 5b). Con 25 metas y 25 actividades del corte 30/09/2026: 878 comprobaciones y ninguna diferencia, incluidos los porcentajes de las tarjetas, el dinero por meta, la entidad normalizada y la gráfica de avance por año de cada actividad.
+
 ## 5. Qué falta frente al anteproyecto
 
 | Objetivo | Estado |
